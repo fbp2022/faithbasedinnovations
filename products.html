@@ -11,11 +11,78 @@
   
 </head>
 <body>
-  <header data-site-header></header>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Faith Based Innovations, LLC home">
+      <span class="logo-mark logo-mark--header">
+        <img src="assets/FBI.png" alt="" decoding="async" fetchpriority="high" />
+      </span>
+      <span class="brand-text">
+        <span class="brand-text-full">Faith Based Innovations, LLC</span>
+        <span class="brand-text-short">FBI, LLC</span>
+      </span>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary">
+      <a href="products.html" class="nav-link active" aria-current="page">Products</a>
+      <a href="security.html" class="nav-link">Security</a>
+      <a href="privacy.html" class="nav-link">Privacy</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="journal.html" class="nav-link">Journal</a>
+      <a href="cart.html" class="nav-link">Cart<span class="nav-cart-count" data-cart-count>0</span></a>
+    </nav>
+    <div class="header-utils">
+      <a href="products.html" class="btn btn-primary cta">Join waitlist</a>
+    </div>
+  </div>
+</header>
   <main>
 <section class="section"><div class="container"><p class="eyebrow">Products</p><h1 class="title">Desktop software lineup</h1><p>Pre-release lineup. Built local-first and structured for long-term control.</p><div class="card-grid"><article class="card"><span class="status">Early access</span><h2>CFO</h2><p>Financial command software for households and owner-led teams.</p><p class="muted">In development - terms and pricing TBD</p><div style="display:flex;gap:.6rem;flex-wrap:wrap"><a href="product-cfo.html" class="btn">Learn more</a><button class="btn btn-primary" data-product-action="cfo">Join early access</button></div></article><article class="card"><span class="status">Join waitlist</span><h2>Ledger</h2><p>Clear bookkeeping and operational records with desktop-level control.</p><p class="muted">In development</p><div style="display:flex;gap:.6rem;flex-wrap:wrap"><a href="product-ledger.html" class="btn">Learn more</a><button class="btn" data-product-action="ledger">Join waitlist</button></div></article><article class="card"><span class="status">Coming soon</span><h2>Eden</h2><p>A private operations workspace for planning, stewardship, and execution.</p><p class="muted">In development</p><div style="display:flex;gap:.6rem;flex-wrap:wrap"><a href="product-eden.html" class="btn">Learn more</a><button class="btn" data-product-action="eden">Track release</button></div></article></div></div></section>
 </main>
-  <footer data-site-footer></footer>
+  <footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand brand--footer" href="index.html">
+        <span class="logo-mark logo-mark--footer">
+          <img src="assets/FBI.png" alt="" decoding="async" />
+        </span>
+        <span>Faith Based Innovations, LLC</span>
+      </a>
+      <p>Premium desktop software. Local-first, privacy-first, built for long-term control.</p>
+    </div>
+    <div>
+      <h3>Products</h3>
+      <a href="product-cfo.html">CFO</a>
+      <a href="product-ledger.html">Ledger</a>
+      <a href="product-eden.html">Eden</a>
+      <a href="products.html">All products</a>
+    </div>
+    <div>
+      <h3>Company</h3>
+      <a href="about.html">About</a>
+      <a href="journal.html">Journal</a>
+    </div>
+    <div>
+      <h3>Trust / Legal</h3>
+      <a href="security.html">Security</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>Copyright Faith Based Innovations, LLC</span>
+    <span>Pre-release site. Commerce flows are staged for a future public release.</span>
+  </div>
+</footer>
+  <nav class="site-bottom-nav" aria-label="Mobile primary navigation">
+  <div class="site-bottom-nav-primary">
+    <a href="index.html" class="bottom-nav-link"><span class="bottom-nav-label">Home</span></a>
+    <a href="products.html" class="bottom-nav-link active" aria-current="page"><span class="bottom-nav-label">Products</span></a>
+    <a href="security.html" class="bottom-nav-link"><span class="bottom-nav-label">Security</span></a>
+    <a href="about.html" class="bottom-nav-link"><span class="bottom-nav-label">About</span></a>
+    <a href="cart.html" class="bottom-nav-link"><span class="bottom-nav-label">Cart</span><span class="bottom-nav-badge" data-cart-count>0</span></a>
+  </div>
+  <a href="journal.html" class="bottom-nav-journal">Journal</a>
+</nav>
   <script type="module" src="js/main.js"></script>
   <script type="module" src="js/cart.js"></script>
 </body>

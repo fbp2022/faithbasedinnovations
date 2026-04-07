@@ -11,11 +11,78 @@
   <link rel="stylesheet" href="css/pages/legal.css" />
 </head>
 <body>
-  <header data-site-header></header>
+  <header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href="index.html" aria-label="Faith Based Innovations, LLC home">
+      <span class="logo-mark logo-mark--header">
+        <img src="assets/FBI.png" alt="" decoding="async" fetchpriority="high" />
+      </span>
+      <span class="brand-text">
+        <span class="brand-text-full">Faith Based Innovations, LLC</span>
+        <span class="brand-text-short">FBI, LLC</span>
+      </span>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary">
+      <a href="products.html" class="nav-link">Products</a>
+      <a href="security.html" class="nav-link active" aria-current="page">Security</a>
+      <a href="privacy.html" class="nav-link">Privacy</a>
+      <a href="about.html" class="nav-link">About</a>
+      <a href="journal.html" class="nav-link">Journal</a>
+      <a href="cart.html" class="nav-link">Cart<span class="nav-cart-count" data-cart-count>0</span></a>
+    </nav>
+    <div class="header-utils">
+      <a href="products.html" class="btn btn-primary cta">Join waitlist</a>
+    </div>
+  </div>
+</header>
   <main>
 <section class="section legal-sections"><div class="container"><p class="eyebrow">Security</p><h1 class="title">Security posture in plain English</h1><div class="card"><h2>Pre-release context</h2><p>Faith Based Innovations, LLC is pre-release. This page describes our baseline security posture and principles; product-specific detail will expand as we approach public releases.</p></div><p class="lead">Security decisions start in architecture. We prefer local-first product design, narrow trust boundaries, and controls that are understandable in practice.</p><div class="card"><h2>What this actually means</h2><p>We intentionally avoid unnecessary platform complexity. Simpler systems create fewer places for silent failure and fewer assumptions users must trust.</p></div><div class="card"><h2>Access</h2><p>Administrative access is limited to required personnel and constrained by role. We favor least-privilege design and periodic review over broad standing access.</p><p>Internal operational access is treated as sensitive, logged where practical, and evaluated against principle of need.</p></div><div class="card"><h2>Encryption</h2><p>Data protection uses modern encryption methods for transit and storage where those paths apply. Security controls are selected for reliability, not marketing optics.</p><p>Local-first architecture also reduces unnecessary data movement, which reduces exposure.</p></div><div class="card"><h2>Infrastructure</h2><p>Our external infrastructure footprint is intentionally restrained. Dependencies are chosen carefully because every additional service increases operational and security surface area.</p></div><div class="card"><h2>Social engineering</h2><p>Most attacks start with people, not code. Operational safeguards and internal handling protocols are built with that reality in mind.</p></div><div class="card"><h2>Vulnerability reporting</h2><p>A dedicated reporting path will be published once finalized. Until then, this section remains reserved to avoid false or unmanaged channels.</p></div><div class="card"><h2>Closing note</h2><p>Security is a long-term practice, not a launch announcement.</p></div></div></section>
 </main>
-  <footer data-site-footer></footer>
+  <footer class="site-footer">
+  <div class="container footer-grid">
+    <div class="footer-brand">
+      <a class="brand brand--footer" href="index.html">
+        <span class="logo-mark logo-mark--footer">
+          <img src="assets/FBI.png" alt="" decoding="async" />
+        </span>
+        <span>Faith Based Innovations, LLC</span>
+      </a>
+      <p>Premium desktop software. Local-first, privacy-first, built for long-term control.</p>
+    </div>
+    <div>
+      <h3>Products</h3>
+      <a href="product-cfo.html">CFO</a>
+      <a href="product-ledger.html">Ledger</a>
+      <a href="product-eden.html">Eden</a>
+      <a href="products.html">All products</a>
+    </div>
+    <div>
+      <h3>Company</h3>
+      <a href="about.html">About</a>
+      <a href="journal.html">Journal</a>
+    </div>
+    <div>
+      <h3>Trust / Legal</h3>
+      <a href="security.html">Security</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="terms.html">Terms</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">
+    <span>Copyright Faith Based Innovations, LLC</span>
+    <span>Pre-release site. Commerce flows are staged for a future public release.</span>
+  </div>
+</footer>
+  <nav class="site-bottom-nav" aria-label="Mobile primary navigation">
+  <div class="site-bottom-nav-primary">
+    <a href="index.html" class="bottom-nav-link"><span class="bottom-nav-label">Home</span></a>
+    <a href="products.html" class="bottom-nav-link"><span class="bottom-nav-label">Products</span></a>
+    <a href="security.html" class="bottom-nav-link active" aria-current="page"><span class="bottom-nav-label">Security</span></a>
+    <a href="about.html" class="bottom-nav-link"><span class="bottom-nav-label">About</span></a>
+    <a href="cart.html" class="bottom-nav-link"><span class="bottom-nav-label">Cart</span><span class="bottom-nav-badge" data-cart-count>0</span></a>
+  </div>
+  <a href="journal.html" class="bottom-nav-journal">Journal</a>
+</nav>
   <script type="module" src="js/main.js"></script>
   <script type="module" src="js/cart.js"></script>
 </body>
