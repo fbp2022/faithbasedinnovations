@@ -1,7 +1,8 @@
+/**
+ * Layout (header, footer, mobile nav) is static HTML on every page.
+ * This module only enhances: cart badge counts and product interest buttons.
+ */
 import { PRODUCTS } from "./site-data.js";
-import { renderHeader } from "../components/header.js";
-import { renderFooter } from "../components/footer.js";
-import { renderBottomNav } from "../components/bottom-nav.js";
 
 function cartCount() {
   const raw = localStorage.getItem("fbi_cart");
@@ -48,9 +49,5 @@ function wireProductActions() {
   });
 }
 
-const count = cartCount();
-renderHeader(count);
-renderFooter();
-renderBottomNav(count);
-wireProductActions();
 refreshCartBadges();
+wireProductActions();
