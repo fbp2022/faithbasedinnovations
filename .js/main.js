@@ -1,6 +1,7 @@
 import { PRODUCTS } from "./site-data.js";
 import { renderHeader } from "../components/header.js";
 import { renderFooter } from "../components/footer.js";
+import { renderBottomNav } from "../components/bottom-nav.js";
 
 function cartCount() {
   const raw = localStorage.getItem("fbi_cart");
@@ -13,44 +14,43 @@ function cartCount() {
   }
 }
 
-
-function wireMobileNav() {
-  const button = document.querySelector("[data-mobile-toggle]");
-  const panel = document.querySelector("[data-mobile-panel]");
-  if (!button || !panel) return;
-  button.addEventListener("click", () => {
-    const open = panel.classList.toggle("open");
-    button.setAttribute("aria-expanded", String(open));
+function refreshCartBadges() {
+  const n = String(cartCount());
+  document.querySelectorAll("[data-cart-count]").forEach((el) => {
+    el.textContent = n;
   });
 }
 
-function wireAddToCart() {
+function wireProductActions() {
   document.querySelectorAll("[data-product-action]").forEach((btn) => {
     btn.addEventListener("click", () => {
       const id = btn.getAttribute("data-product-action");
       const product = PRODUCTS[id];
       if (!product) return;
 
-      if (!product.purchasable) {
-        btn.textContent = product.status === "Join waitlist" ? "Waitlist Open" : "Coming Soon";
-        setTimeout(() => (btn.textContent = product.actionLabel), 1100);
+      if (product.purchasable) {
+        const raw = localStorage.getItem("fbi_cart");
+        const list = raw ? JSON.parse(raw) : [];
+        const existing = list.find((item) => item.id === id);
+        if (existing) existing.qty += 1;
+        else list.push({ id, qty: 1 });
+        localStorage.setItem("fbi_cart", JSON.stringify(list));
+        refreshCartBadges();
+        btn.textContent = "Added";
+        setTimeout(() => (btn.textContent = product.actionLabel), 900);
         return;
       }
 
-      const raw = localStorage.getItem("fbi_cart");
-      const list = raw ? JSON.parse(raw) : [];
-      const existing = list.find((item) => item.id === id);
-      if (existing) existing.qty += 1;
-      else list.push({ id, qty: 1 });
-      localStorage.setItem("fbi_cart", JSON.stringify(list));
-      document.querySelectorAll("[data-cart-count]").forEach((slot) => (slot.textContent = String(cartCount())));
-      btn.textContent = "Added";
-      setTimeout(() => (btn.textContent = product.actionLabel), 900);
+      const ack = product.status === "Join waitlist" ? "On the list" : "Noted";
+      btn.textContent = ack;
+      setTimeout(() => (btn.textContent = product.actionLabel), 1100);
     });
   });
 }
 
-renderHeader(cartCount());
+const count = cartCount();
+renderHeader(count);
 renderFooter();
-wireMobileNav();
-wireAddToCart();
+renderBottomNav(count);
+wireProductActions();
+refreshCartBadges();

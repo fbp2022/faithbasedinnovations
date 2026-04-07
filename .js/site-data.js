@@ -2,34 +2,34 @@ export const PRODUCTS = {
   cfo: {
     id: "cfo",
     name: "CFO",
-    priceLabel: "Founding Edition - Pricing in final review",
+    priceLabel: "Founding edition - terms and pricing TBD",
     amount: null,
-    status: "Available now",
+    status: "Early access",
     short: "Financial command software for households and owner-led operations.",
     path: "product-cfo.html",
-    purchasable: true,
-    actionLabel: "Add to Cart"
+    purchasable: false,
+    actionLabel: "Join early access"
   },
   ledger: {
     id: "ledger",
     name: "Ledger",
-    priceLabel: "Preview Edition - Coming soon",
+    priceLabel: "In development",
     amount: null,
     status: "Join waitlist",
     short: "Daily recordkeeping desktop app designed for clarity and auditability.",
     path: "product-ledger.html",
     purchasable: false,
-    actionLabel: "Join Waitlist"
+    actionLabel: "Join waitlist"
   },
   eden: {
     id: "eden",
     name: "Eden",
-    priceLabel: "Design phase - Coming soon",
+    priceLabel: "In development",
     amount: null,
     status: "Coming soon",
     short: "A calm operations workspace for stewardship, planning, and control.",
     path: "product-eden.html",
     purchasable: false,
-    actionLabel: "Track Release"
+    actionLabel: "Track release"
   }
 };
