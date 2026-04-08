@@ -1,0 +1,67 @@
+<% var hasProduct = typeof activeProduct !== 'undefined' && activeProduct; %>
+<header class="shell-header" data-shell-header>
+  <div class="shell-header__bg" aria-hidden="true"></div>
+  <div class="container shell-header__inner">
+    <a class="shell-brand" href="index.html" aria-label="<%= SITE.legalName %> home">
+      <span class="shell-brand__logo">
+        <img src="assets/<%= SITE.logoFile %>" alt="<%= SITE.logoAlt %>" decoding="async" fetchpriority="high" />
+      </span>
+      <span class="shell-brand__text">
+        <span class="shell-brand__name"><%= SITE.brand %></span>
+        <span class="shell-brand__legal"><%= SITE.legalName %></span>
+      </span>
+    </a>
+
+    <nav class="shell-nav shell-nav--desktop" aria-label="Primary">
+      <ul class="shell-nav__list">
+        <% NAV_PRIMARY.forEach(function (item) { %>
+          <% if (item.id === 'products') { %>
+            <li class="shell-nav__item shell-nav__item--flyout<%= typeof activeNav !== 'undefined' && activeNav === 'products' ? ' is-active' : '' %>">
+              <a href="<%= item.href %>" class="shell-nav__link<%= typeof activeNav !== 'undefined' && activeNav === 'products' && !hasProduct ? ' is-active' : '' %>"<% if (typeof activeNav !== 'undefined' && activeNav === 'products' && !hasProduct) { %> aria-current="page"<% } %>><%= item.label %></a>
+              <div class="shell-flyout" role="region" aria-label="Products in the suite">
+                <div class="shell-flyout__grid">
+                  <% NAV_PRODUCTS.forEach(function (p) { %>
+                    <a href="<%= p.href %>" class="shell-flyout__card<%= hasProduct && activeProduct === p.id ? ' is-active' : '' %>"<% if (hasProduct && activeProduct === p.id) { %> aria-current="page"<% } %>>
+                      <span class="shell-flyout__name"><%= p.label %></span>
+                      <span class="shell-flyout__line"><%= p.line %></span>
+                    </a>
+                  <% }); %>
+                </div>
+              </div>
+            </li>
+          <% } else { %>
+            <li class="shell-nav__item<%= typeof activeNav !== 'undefined' && activeNav === item.id ? ' is-active' : '' %>">
+              <a href="<%= item.href %>" class="shell-nav__link<%= typeof activeNav !== 'undefined' && activeNav === item.id ? ' is-active' : '' %>"<% if (typeof activeNav !== 'undefined' && activeNav === item.id) { %> aria-current="page"<% } %>><%= item.label %></a>
+            </li>
+          <% } %>
+        <% }); %>
+      </ul>
+    </nav>
+
+    <div class="shell-header__actions">
+      <a href="products.html" class="btn btn--primary shell-header__cta">View products</a>
+      <details class="shell-menu">
+        <summary class="shell-menu__summary">Menu</summary>
+        <div class="shell-menu__panel">
+          <nav class="shell-menu__nav" aria-label="Site">
+            <% NAV_PRIMARY.forEach(function (item) { %>
+              <a href="<%= item.href %>" class="shell-menu__link<%= typeof activeNav !== 'undefined' && activeNav === item.id ? ' is-active' : '' %>"><%= item.label %></a>
+            <% }); %>
+            <div class="shell-menu__group">
+              <span class="shell-menu__group-label">Products</span>
+              <% NAV_PRODUCTS.forEach(function (p) { %>
+                <a href="<%= p.href %>" class="shell-menu__sublink<%= hasProduct && activeProduct === p.id ? ' is-active' : '' %>"><%= p.label %></a>
+              <% }); %>
+            </div>
+            <div class="shell-menu__legal">
+              <a href="security.html" class="shell-menu__muted">Security</a>
+              <a href="privacy.html" class="shell-menu__muted">Privacy</a>
+              <a href="terms.html" class="shell-menu__muted">Terms</a>
+            </div>
+          </nav>
+        </div>
+      </details>
+    </div>
+  </div>
+</header>
+<%- include('./edge-nav') %>

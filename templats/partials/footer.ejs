@@ -1,0 +1,36 @@
+<footer class="shell-footer">
+  <div class="container shell-footer__grid">
+    <div class="shell-footer__brand">
+      <a class="shell-footer__logo-link" href="index.html">
+        <span class="shell-footer__logo">
+          <img src="assets/<%= SITE.logoFile %>" alt="<%= SITE.logoAlt %>" decoding="async" />
+        </span>
+        <span class="shell-footer__brand-text"><%= SITE.legalName %></span>
+      </a>
+      <p class="shell-footer__tagline"><%= SITE.tagline %></p>
+    </div>
+    <div>
+      <h3 class="shell-footer__heading">Products</h3>
+      <% NAV_PRODUCTS.forEach(function (p) { %>
+        <a href="<%= p.href %>" class="shell-footer__link"><%= p.label %></a>
+      <% }); %>
+      <a href="products.html" class="shell-footer__link">All products</a>
+      <a href="compare.html" class="shell-footer__link">Compare</a>
+    </div>
+    <div>
+      <h3 class="shell-footer__heading">Company</h3>
+      <a href="about.html" class="shell-footer__link">About</a>
+      <a href="support.html" class="shell-footer__link">Support</a>
+    </div>
+    <div>
+      <h3 class="shell-footer__heading">Trust / Legal</h3>
+      <a href="security.html" class="shell-footer__link">Security</a>
+      <a href="privacy.html" class="shell-footer__link">Privacy</a>
+      <a href="terms.html" class="shell-footer__link">Terms</a>
+    </div>
+  </div>
+  <div class="container shell-footer__bottom">
+    <span>&copy; Faith Based Innovations, LLC</span>
+    <span>CFO, Eden, and Ledger are product names of Faith Based Innovations, LLC.</span>
+  </div>
+</footer>

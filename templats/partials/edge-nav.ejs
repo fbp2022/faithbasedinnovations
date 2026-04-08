@@ -1,0 +1,36 @@
+<% var hasProduct = typeof activeProduct !== 'undefined' && activeProduct; %>
+<nav class="edge-nav" aria-label="Primary" data-edge-nav>
+  <div class="edge-nav__inner">
+    <a href="index.html" class="edge-nav__brand" aria-label="<%= SITE.legalName %> home">
+      <span class="edge-nav__brand-mark"><%= SITE.abbrev %></span>
+      <span class="edge-nav__brand-line"><%= SITE.brand %></span>
+    </a>
+    <div class="edge-nav__scroll">
+      <ul class="edge-nav__list">
+        <% NAV_PRIMARY.forEach(function (item) { %>
+          <% if (item.id === 'products') { %>
+            <li class="edge-nav__item">
+              <details class="edge-nav__details"<%= typeof activeNav !== 'undefined' && activeNav === 'products' ? ' open' : '' %>>
+                <summary class="edge-nav__summary<%= typeof activeNav !== 'undefined' && activeNav === 'products' && !hasProduct ? ' is-active' : '' %>"><%= item.label %></summary>
+                <div class="edge-nav__sub">
+                  <% NAV_PRODUCTS.forEach(function (p) { %>
+                    <a href="<%= p.href %>" class="edge-nav__sublink<%= hasProduct && activeProduct === p.id ? ' is-active' : '' %>"<% if (hasProduct && activeProduct === p.id) { %> aria-current="page"<% } %>><span class="edge-nav__sublink-name"><%= p.label %></span><span class="edge-nav__sublink-line"><%= p.line %></span></a>
+                  <% }); %>
+                </div>
+              </details>
+            </li>
+          <% } else { %>
+            <li class="edge-nav__item">
+              <a href="<%= item.href %>" class="edge-nav__link<%= typeof activeNav !== 'undefined' && activeNav === item.id ? ' is-active' : '' %>"<% if (typeof activeNav !== 'undefined' && activeNav === item.id) { %> aria-current="page"<% } %>><%= item.label %></a>
+            </li>
+          <% } %>
+        <% }); %>
+      </ul>
+    </div>
+    <div class="edge-nav__meta">
+      <a href="security.html" class="edge-nav__muted">Security</a>
+      <a href="privacy.html" class="edge-nav__muted">Privacy</a>
+      <a href="terms.html" class="edge-nav__muted">Terms</a>
+    </div>
+  </div>
+</nav>

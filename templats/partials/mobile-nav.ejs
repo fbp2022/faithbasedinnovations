@@ -1,0 +1,41 @@
+<% var hasProduct = typeof activeProduct !== 'undefined' && activeProduct; %>
+<% var isLegal = typeof pageClass === 'string' && pageClass.indexOf('legal') !== -1; %>
+<% var moreExpandedByDefault = activeNav === 'about' || activeNav === 'support' || isLegal; %>
+<% var moreTabActive = hasProduct || moreExpandedByDefault; %>
+<nav class="shell-dock" aria-label="Quick navigation">
+  <div class="shell-dock__inner">
+    <a href="index.html" class="shell-dock__item<%= activeNav === 'home' ? ' is-active' : '' %>">
+      <span class="shell-dock__dot" aria-hidden="true"></span>
+      <span>Home</span>
+    </a>
+    <a href="products.html" class="shell-dock__item<%= activeNav === 'products' ? ' is-active' : '' %>">
+      <span class="shell-dock__dot" aria-hidden="true"></span>
+      <span>Products</span>
+    </a>
+    <a href="compare.html" class="shell-dock__item<%= activeNav === 'compare' ? ' is-active' : '' %>">
+      <span class="shell-dock__dot" aria-hidden="true"></span>
+      <span>Compare</span>
+    </a>
+    <div class="shell-dock__expand">
+      <details class="shell-dock__details"<%= moreExpandedByDefault ? ' open' : '' %>>
+        <summary class="shell-dock__summary<%= moreTabActive ? ' is-active' : '' %>">
+          <span class="shell-dock__dot" aria-hidden="true"></span>
+          <span>More</span>
+        </summary>
+        <div class="shell-dock__panel" role="group" aria-label="More links">
+          <p class="shell-dock__panel-label">Products</p>
+          <% NAV_PRODUCTS.forEach(function (p) { %>
+            <a href="<%= p.href %>" class="shell-dock__panel-link<%= hasProduct && activeProduct === p.id ? ' is-active' : '' %>"><%= p.label %></a>
+          <% }); %>
+          <p class="shell-dock__panel-label">Company</p>
+          <a href="about.html" class="shell-dock__panel-link<%= activeNav === 'about' ? ' is-active' : '' %>">About</a>
+          <a href="support.html" class="shell-dock__panel-link<%= activeNav === 'support' ? ' is-active' : '' %>">Support</a>
+          <p class="shell-dock__panel-label">Legal</p>
+          <a href="security.html" class="shell-dock__panel-link<%= typeof pageClass === 'string' && pageClass.indexOf('security') !== -1 ? ' is-active' : '' %>">Security</a>
+          <a href="privacy.html" class="shell-dock__panel-link<%= typeof pageClass === 'string' && pageClass.indexOf('privacy') !== -1 ? ' is-active' : '' %>">Privacy</a>
+          <a href="terms.html" class="shell-dock__panel-link<%= typeof pageClass === 'string' && pageClass.indexOf('terms') !== -1 ? ' is-active' : '' %>">Terms</a>
+        </div>
+      </details>
+    </div>
+  </div>
+</nav>
