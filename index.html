@@ -1,175 +1,372 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Faith Based Innovations, LLC | Premium Desktop Software</title>
-  <link rel="stylesheet" href="css/variables.css" />
-  <link rel="stylesheet" href="css/base.css" />
-  <link rel="stylesheet" href="css/layout.css" />
-  <link rel="stylesheet" href="css/components.css" />
-  <link rel="stylesheet" href="css/pages/home.css" />
+  <title>Faith Based Innovations | Desktop software</title>
+  <meta name="description" content="Three premium desktop products—local-first, privacy-first, built around Steward." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="dist/assets/main.css" />
 </head>
-<body>
-  <header class="site-header">
-  <div class="container header-inner">
-    <a class="brand" href="index.html" aria-label="Faith Based Innovations, LLC home">
-      <span class="logo-mark logo-mark--header">
-        <img src="assets/FBI.svg" alt="" decoding="async" fetchpriority="high" />
+
+<body class="page page--home">
+
+<header class="shell-header" data-shell-header>
+  <div class="shell-header__bg" aria-hidden="true"></div>
+  <div class="container shell-header__inner">
+    <a class="shell-brand" href="index.html" aria-label="Faith Based Innovations, LLC home">
+      <span class="shell-brand__logo">
+        <img src="dist/assets/FBI_Transparent.png" alt="Faith Based Innovations" decoding="async" fetchpriority="high" />
       </span>
-      <span class="brand-text">
-        <span class="brand-text-full">Faith Based Innovations, LLC</span>
-        <span class="brand-text-short">FBI, LLC</span>
+      <span class="shell-brand__text">
+        <span class="shell-brand__name">Faith Based Innovations</span>
+        <span class="shell-brand__legal">Faith Based Innovations, LLC</span>
       </span>
     </a>
-    <nav class="desktop-nav" aria-label="Primary">
-      <a href="products.html" class="nav-link">Products</a>
-      <a href="security.html" class="nav-link">Security</a>
-      <a href="privacy.html" class="nav-link">Privacy</a>
-      <a href="about.html" class="nav-link">About</a>
-      <a href="journal.html" class="nav-link">Journal</a>
-      <a href="cart.html" class="nav-link">Cart<span class="nav-cart-count" data-cart-count>0</span></a>
+
+    <nav class="shell-nav shell-nav--desktop" aria-label="Primary">
+      <ul class="shell-nav__list">
+        
+          
+            <li class="shell-nav__item is-active">
+              <a href="index.html" class="shell-nav__link is-active" aria-current="page">Home</a>
+            </li>
+          
+        
+          
+            <li class="shell-nav__item shell-nav__item--flyout">
+              <a href="products.html" class="shell-nav__link">Products</a>
+              <div class="shell-flyout" role="region" aria-label="Products in the suite">
+                <div class="shell-flyout__grid">
+                  
+                    <a href="product-cfo.html" class="shell-flyout__card">
+                      <span class="shell-flyout__name">CFO</span>
+                      <span class="shell-flyout__line">Flagship financial operating system—budgeting, planning, forecasting, Steward-guided.</span>
+                    </a>
+                  
+                    <a href="product-eden.html" class="shell-flyout__card">
+                      <span class="shell-flyout__name">Eden</span>
+                      <span class="shell-flyout__line">Research ingestion, analysis, prioritization, and source evaluation—powered by Steward.</span>
+                    </a>
+                  
+                    <a href="product-ledger.html" class="shell-flyout__card">
+                      <span class="shell-flyout__name">Ledger</span>
+                      <span class="shell-flyout__line">Encrypted identity vault and deterministic document execution—Steward assists mapping, never invents data.</span>
+                    </a>
+                  
+                </div>
+              </div>
+            </li>
+          
+        
+          
+            <li class="shell-nav__item">
+              <a href="compare.html" class="shell-nav__link">Compare</a>
+            </li>
+          
+        
+      </ul>
     </nav>
-    <div class="header-utils">
-      <a href="products.html" class="btn btn-primary cta">Join waitlist</a>
+
+    <div class="shell-header__actions">
+      <a href="products.html" class="btn btn--primary shell-header__cta">View products</a>
+      <details class="shell-menu">
+        <summary class="shell-menu__summary">Menu</summary>
+        <div class="shell-menu__panel">
+          <nav class="shell-menu__nav" aria-label="Site">
+            
+              <a href="index.html" class="shell-menu__link is-active">Home</a>
+            
+              <a href="products.html" class="shell-menu__link">Products</a>
+            
+              <a href="compare.html" class="shell-menu__link">Compare</a>
+            
+            <div class="shell-menu__group">
+              <span class="shell-menu__group-label">Products</span>
+              
+                <a href="product-cfo.html" class="shell-menu__sublink">CFO</a>
+              
+                <a href="product-eden.html" class="shell-menu__sublink">Eden</a>
+              
+                <a href="product-ledger.html" class="shell-menu__sublink">Ledger</a>
+              
+            </div>
+            <div class="shell-menu__legal">
+              <a href="security.html" class="shell-menu__muted">Security</a>
+              <a href="privacy.html" class="shell-menu__muted">Privacy</a>
+              <a href="terms.html" class="shell-menu__muted">Terms</a>
+            </div>
+          </nav>
+        </div>
+      </details>
     </div>
   </div>
 </header>
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
-        <div>
-          <p class="eyebrow">Faith Based Innovations, LLC</p>
-          <h1>Software that stays with you.</h1>
-          <p>Premium desktop applications, built local-first for people who want control, privacy, and tools that stay dependable over time.</p>
-          <div class="hero-actions">
-            <a href="products.html" class="btn btn-primary">Explore products</a>
-            <a href="security.html" class="btn">Security posture</a>
-          </div>
-          <div class="trust-row">
-            <div class="trust-pill">Pre-release company</div>
-            <div class="trust-pill">Desktop-first</div>
-            <div class="trust-pill">Privacy-first</div>
-            <div class="trust-pill">Ownership-first</div>
-          </div>
-        </div>
-        <aside class="hero-panel">
-          <p class="eyebrow">In development</p>
-          <h2>Calm interface, serious internals.</h2>
-          <p>CFO, Ledger, and Eden are in active development. The product architecture is local-first, with minimal external dependency by design.</p>
-          <div class="arch-grid">
-            <div>On-device workflows as the default path.</div>
-            <div>Clear scope instead of feature sprawl.</div>
-            <div>Stable foundations for long-term use.</div>
-            <div>Transparent trust and legal pages as we ship.</div>
-          </div>
-        </aside>
-      </div>
-    </section>
 
-    <section class="section">
-      <div class="container">
-        <p class="eyebrow">Products</p>
-        <h2 class="title">A focused desktop lineup</h2>
-        <p>Each product has a defined role. Nothing here is positioned as a live retail release yet.</p>
-        <div class="card-grid">
-          <article class="card">
-            <span class="status">Early access</span>
-            <h3>CFO</h3>
-            <p>Financial command software for households and owner-led operations.</p>
-            <a href="product-cfo.html" class="btn">View product</a>
-          </article>
-          <article class="card">
-            <span class="status">Join waitlist</span>
-            <h3>Ledger</h3>
-            <p>Recordkeeping and reconciliation for readable history and routine clarity.</p>
-            <a href="product-ledger.html" class="btn">View product</a>
-          </article>
-          <article class="card">
-            <span class="status">Coming soon</span>
-            <h3>Eden</h3>
-            <p>Stewardship and operations software for planning and execution without noise.</p>
-            <a href="product-eden.html" class="btn">View product</a>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container split">
-        <article class="card">
-          <p class="eyebrow">Trust</p>
-          <h2>Security without theater.</h2>
-          <p>Architecture, access control, and plain-language policies matter more than slogans. Read how we think about risk.</p>
-          <a href="security.html" class="btn">Read security</a>
-        </article>
-        <article class="card">
-          <p class="eyebrow">Stewardship</p>
-          <h2>Software that serves the household.</h2>
-          <p>We build with restraint: fewer dependencies, fewer surprises, and a bias toward ownership over extraction.</p>
-          <a href="about.html" class="btn">Why we build this way</a>
-        </article>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <p class="eyebrow">Commerce</p>
-        <h2 class="title">Purchase path, staged for release.</h2>
-        <p>Cart and checkout screens exist so the commercial flow is ready when products are publicly available. Nothing is sold through this site today.</p>
-        <div class="hero-actions">
-          <a href="cart.html" class="btn">View cart (staged)</a>
-          <a href="purchase.html" class="btn btn-primary">Purchase flow (staged)</a>
-        </div>
-      </div>
-    </section>
-  </main>
-  <footer class="site-footer">
-  <div class="container footer-grid">
-    <div class="footer-brand">
-      <a class="brand brand--footer" href="index.html">
-        <span class="logo-mark logo-mark--footer">
-          <img src="assets/FBI.svg" alt="" decoding="async" />
-        </span>
-        <span>Faith Based Innovations, LLC</span>
-      </a>
-      <p>Premium desktop software. Local-first, privacy-first, built for long-term control.</p>
+<nav class="edge-nav" aria-label="Primary" data-edge-nav>
+  <div class="edge-nav__inner">
+    <a href="index.html" class="edge-nav__brand" aria-label="Faith Based Innovations, LLC home">
+      <span class="edge-nav__brand-mark">FBI</span>
+      <span class="edge-nav__brand-line">Faith Based Innovations</span>
+    </a>
+    <div class="edge-nav__scroll">
+      <ul class="edge-nav__list">
+        
+          
+            <li class="edge-nav__item">
+              <a href="index.html" class="edge-nav__link is-active" aria-current="page">Home</a>
+            </li>
+          
+        
+          
+            <li class="edge-nav__item">
+              <details class="edge-nav__details">
+                <summary class="edge-nav__summary">Products</summary>
+                <div class="edge-nav__sub">
+                  
+                    <a href="product-cfo.html" class="edge-nav__sublink"><span class="edge-nav__sublink-name">CFO</span><span class="edge-nav__sublink-line">Flagship financial operating system—budgeting, planning, forecasting, Steward-guided.</span></a>
+                  
+                    <a href="product-eden.html" class="edge-nav__sublink"><span class="edge-nav__sublink-name">Eden</span><span class="edge-nav__sublink-line">Research ingestion, analysis, prioritization, and source evaluation—powered by Steward.</span></a>
+                  
+                    <a href="product-ledger.html" class="edge-nav__sublink"><span class="edge-nav__sublink-name">Ledger</span><span class="edge-nav__sublink-line">Encrypted identity vault and deterministic document execution—Steward assists mapping, never invents data.</span></a>
+                  
+                </div>
+              </details>
+            </li>
+          
+        
+          
+            <li class="edge-nav__item">
+              <a href="compare.html" class="edge-nav__link">Compare</a>
+            </li>
+          
+        
+      </ul>
     </div>
-    <div>
-      <h3>Products</h3>
-      <a href="product-cfo.html">CFO</a>
-      <a href="product-ledger.html">Ledger</a>
-      <a href="product-eden.html">Eden</a>
-      <a href="products.html">All products</a>
-    </div>
-    <div>
-      <h3>Company</h3>
-      <a href="about.html">About</a>
-      <a href="journal.html">Journal</a>
-    </div>
-    <div>
-      <h3>Trust / Legal</h3>
-      <a href="security.html">Security</a>
-      <a href="privacy.html">Privacy</a>
-      <a href="terms.html">Terms</a>
+    <div class="edge-nav__meta">
+      <a href="security.html" class="edge-nav__muted">Security</a>
+      <a href="privacy.html" class="edge-nav__muted">Privacy</a>
+      <a href="terms.html" class="edge-nav__muted">Terms</a>
     </div>
   </div>
-  <div class="container footer-bottom">
-    <span>Copyright Faith Based Innovations, LLC</span>
-    <span>Pre-release site. Commerce flows are staged for a future public release.</span>
+</nav>
+
+
+<main id="main" class="main">
+
+  <section class="hero-cine" data-parallax="slow">
+    <div class="hero-cine__glow" aria-hidden="true"></div>
+    <div class="container hero-cine__layout">
+      <div class="hero-cine__copy">
+        <p class="eyebrow reveal" data-reveal>Faith Based Innovations, LLC</p>
+        <h1 class="hero-cine__title reveal" data-reveal>Premium software, built deliberately.<br /><span class="hero-cine__accent">CFO, Eden, and Ledger—each its own product.</span></h1>
+        <p class="hero-cine__lead reveal" data-reveal>Faith Based Innovations is a multi-product company. CFO is the flagship financial operating system; Eden and Ledger are standalone titles with their own missions. All three are local-first, privacy-first, and powered by Steward.</p>
+        <div class="hero-cine__actions reveal" data-reveal>
+          <a href="products.html" class="btn btn--primary btn--glow">View products</a>
+          <a href="compare.html" class="btn btn--ghost">Compare</a>
+        </div>
+      </div>
+      <div class="hero-cine__visual reveal" data-reveal data-reveal-delay="1">
+        <div class="hero-cine__orb" aria-hidden="true">
+          
+        </div>
+        <div class="hero-cine__stack">
+          <span class="hero-cine__chip">CFO</span>
+          <span class="hero-cine__chip">Eden</span>
+          <span class="hero-cine__chip">Ledger</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tight">
+    <div class="container">
+      <div class="split-pitch reveal" data-reveal>
+        <div>
+          <h2 class="section-title">Three products, one standard</h2>
+          <p class="section-lead">CFO, Eden, and Ledger are independent titles with distinct missions. They share a premium desktop craft ethic and the same underlying intelligence layer—without blending finance, research, and identity into one confused surface.</p>
+        </div>
+        <ul class="pill-list">
+          <li>Local-first architecture</li>
+          <li>Privacy-first by design</li>
+          <li>Steward—rules-based, logic-driven intelligence</li>
+          <li>Unified visual language, separate purposes</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark reveal" data-reveal>
+    <div class="container narrow">
+      <p class="eyebrow" style="text-align: center; margin-bottom: 0.75rem;">Steward</p>
+      <blockquote class="pull-quote">
+        <p>Steward is a controlled, rules-based, logic-driven intelligence layer—not open-ended generation. It helps each product interpret context, apply policy, and surface deterministic guidance from real data.</p>
+        <footer>— Faith Based Innovations</footer>
+      </blockquote>
+      <p class="scene__center" style="margin-top: 1.5rem;">CFO, Eden, and Ledger each use Steward differently: financial interpretation, research prioritization, and document field mapping—all without treating intelligence as magic.</p>
+    </div>
+  </section>
+
+  <section class="section section--products">
+    <div class="container">
+      <header class="section-head reveal" data-reveal>
+        <p class="eyebrow">The line-up</p>
+        <h2 class="section-title">Three products, one ecosystem</h2>
+        <p class="section-lead" style="max-width: 52ch; margin-top: 0.75rem;">Each product has its own page, narrative, and scope. CFO is the flagship; Eden and Ledger are equally intentional—built as real software, not placeholders.</p>
+      </header>
+      <div class="product-trio">
+        
+          <article class="product-card reveal" data-reveal data-reveal-delay="0">
+            <a href="product-cfo.html" class="product-card__link">
+              <span class="product-card__status">In development</span>
+              <span class="product-card__tag">Flagship · Finance</span>
+              <h3 class="product-card__name">CFO</h3>
+              <p class="product-card__line">Flagship financial operating system—budgeting, planning, forecasting, Steward-guided.</p>
+              <span class="product-card__cta">Read the product page</span>
+            </a>
+          </article>
+        
+          <article class="product-card reveal" data-reveal data-reveal-delay="1">
+            <a href="product-eden.html" class="product-card__link">
+              <span class="product-card__status">In development</span>
+              <span class="product-card__tag">Research</span>
+              <h3 class="product-card__name">Eden</h3>
+              <p class="product-card__line">Research ingestion, analysis, prioritization, and source evaluation—powered by Steward.</p>
+              <span class="product-card__cta">Read the product page</span>
+            </a>
+          </article>
+        
+          <article class="product-card reveal" data-reveal data-reveal-delay="2">
+            <a href="product-ledger.html" class="product-card__link">
+              <span class="product-card__status">In development</span>
+              <span class="product-card__tag">Identity &amp; documents</span>
+              <h3 class="product-card__name">Ledger</h3>
+              <p class="product-card__line">Encrypted identity vault and deterministic document execution—Steward assists mapping, never invents data.</p>
+              <span class="product-card__cta">Read the product page</span>
+            </a>
+          </article>
+        
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--dark reveal" data-reveal>
+    <div class="container narrow">
+      <blockquote class="pull-quote">
+        <p>Software that stays on your machine, under your control—with intelligence framed as discipline, not hype.</p>
+        <footer>— Faith Based Innovations</footer>
+      </blockquote>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container cta-band reveal" data-reveal>
+      <div>
+        <h2 class="section-title">See how they differ</h2>
+        <p class="section-lead">A concise comparison of focus, Steward’s role, and boundaries—no checkout, no funnel.</p>
+      </div>
+      <a href="compare.html" class="btn btn--primary btn--glow">Open comparison</a>
+    </div>
+  </section>
+
+  <section class="section section--availability reveal" data-reveal aria-label="Product availability">
+  <div class="container availability-status">
+    <p class="availability-status__badge">In development</p>
+    <p class="availability-status__line">Not available for purchase, download, or access. This is being built.</p>
+    <p class="availability-status__emphasis" role="status">Currently being built</p>
+  </div>
+</section>
+
+
+</main>
+<footer class="shell-footer">
+  <div class="container shell-footer__grid">
+    <div class="shell-footer__brand">
+      <a class="shell-footer__logo-link" href="index.html">
+        <span class="shell-footer__logo">
+          <img src="dist/assets/FBI_Transparent.png" alt="Faith Based Innovations" decoding="async" />
+        </span>
+        <span class="shell-footer__brand-text">Faith Based Innovations, LLC</span>
+      </a>
+      <p class="shell-footer__tagline">Three premium desktop products—local-first, privacy-first, built around Steward.</p>
+    </div>
+    <div>
+      <h3 class="shell-footer__heading">Products</h3>
+      
+        <a href="product-cfo.html" class="shell-footer__link">CFO</a>
+      
+        <a href="product-eden.html" class="shell-footer__link">Eden</a>
+      
+        <a href="product-ledger.html" class="shell-footer__link">Ledger</a>
+      
+      <a href="products.html" class="shell-footer__link">All products</a>
+      <a href="compare.html" class="shell-footer__link">Compare</a>
+    </div>
+    <div>
+      <h3 class="shell-footer__heading">Company</h3>
+      <a href="about.html" class="shell-footer__link">About</a>
+      <a href="support.html" class="shell-footer__link">Support</a>
+    </div>
+    <div>
+      <h3 class="shell-footer__heading">Trust / Legal</h3>
+      <a href="security.html" class="shell-footer__link">Security</a>
+      <a href="privacy.html" class="shell-footer__link">Privacy</a>
+      <a href="terms.html" class="shell-footer__link">Terms</a>
+    </div>
+  </div>
+  <div class="container shell-footer__bottom">
+    <span>&copy; Faith Based Innovations, LLC</span>
+    <span>CFO, Eden, and Ledger are product names of Faith Based Innovations, LLC.</span>
   </div>
 </footer>
-  <nav class="site-bottom-nav" aria-label="Mobile primary navigation">
-  <div class="site-bottom-nav-primary">
-    <a href="index.html" class="bottom-nav-link active" aria-current="page"><span class="bottom-nav-label">Home</span></a>
-    <a href="products.html" class="bottom-nav-link"><span class="bottom-nav-label">Products</span></a>
-    <a href="security.html" class="bottom-nav-link"><span class="bottom-nav-label">Security</span></a>
-    <a href="about.html" class="bottom-nav-link"><span class="bottom-nav-label">About</span></a>
-    <a href="cart.html" class="bottom-nav-link"><span class="bottom-nav-label">Cart</span><span class="bottom-nav-badge" data-cart-count>0</span></a>
+
+
+
+
+
+<nav class="shell-dock" aria-label="Quick navigation">
+  <div class="shell-dock__inner">
+    <a href="index.html" class="shell-dock__item is-active">
+      <span class="shell-dock__dot" aria-hidden="true"></span>
+      <span>Home</span>
+    </a>
+    <a href="products.html" class="shell-dock__item">
+      <span class="shell-dock__dot" aria-hidden="true"></span>
+      <span>Products</span>
+    </a>
+    <a href="compare.html" class="shell-dock__item">
+      <span class="shell-dock__dot" aria-hidden="true"></span>
+      <span>Compare</span>
+    </a>
+    <div class="shell-dock__expand">
+      <details class="shell-dock__details">
+        <summary class="shell-dock__summary">
+          <span class="shell-dock__dot" aria-hidden="true"></span>
+          <span>More</span>
+        </summary>
+        <div class="shell-dock__panel" role="group" aria-label="More links">
+          <p class="shell-dock__panel-label">Products</p>
+          
+            <a href="product-cfo.html" class="shell-dock__panel-link">CFO</a>
+          
+            <a href="product-eden.html" class="shell-dock__panel-link">Eden</a>
+          
+            <a href="product-ledger.html" class="shell-dock__panel-link">Ledger</a>
+          
+          <p class="shell-dock__panel-label">Company</p>
+          <a href="about.html" class="shell-dock__panel-link">About</a>
+          <a href="support.html" class="shell-dock__panel-link">Support</a>
+          <p class="shell-dock__panel-label">Legal</p>
+          <a href="security.html" class="shell-dock__panel-link">Security</a>
+          <a href="privacy.html" class="shell-dock__panel-link">Privacy</a>
+          <a href="terms.html" class="shell-dock__panel-link">Terms</a>
+        </div>
+      </details>
+    </div>
   </div>
-  <a href="journal.html" class="bottom-nav-journal">Journal</a>
 </nav>
-  <script type="module" src="js/main.js"></script>
-  <script type="module" src="js/cart.js"></script>
+  <script type="module" src="dist/assets/chunks/main-Qyup0NfH-BJ5wMq78-D3ZdVdFp.js"></script>
 </body>
 </html>

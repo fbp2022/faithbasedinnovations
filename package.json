@@ -1,0 +1,17 @@
+{
+  "name": "faith-based-innovations-site",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "prebuild": "node scripts/render-pages.mjs",
+    "build": "vite build",
+    "postbuild": "node scripts/stamp-root-html.mjs",
+    "dev": "node scripts/render-pages.mjs && vite",
+    "preview": "vite preview",
+    "open": "npm run build && start \"\" \"dist\\index.html\""
+  },
+  "devDependencies": {
+    "ejs": "^3.1.10",
+    "vite": "^6.0.3"
+  }
+}
