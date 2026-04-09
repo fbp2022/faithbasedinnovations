@@ -1,7 +1,1 @@
-@import "./tokens.css";
-@import "./base.css";
-@import "./shell.css";
-@import "./components.css";
-@import "./scenes.css";
-@import "./motion.css";
-@import "./edge-nav.css";
+/* Site styling is Tailwind CDN on each page; legacy @import stack removed. */

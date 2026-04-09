@@ -37,6 +37,7 @@
   width: auto;
   max-width: 300px;
   object-fit: contain;
+  object-position: left center;
 }
 
 @media (min-width: 768px) {
