@@ -5,9 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>About | Faith Based Innovations, LLC</title>
   <meta name="description" content="Who we are and how we build." />
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/FBI_Transparent.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="./assets/FBI_Transparent.png" />
-  <link rel="apple-touch-icon" href="./assets/FBI_Transparent.png" />
+  <link rel="icon" type="image/png" href="./assets/FBI_Transparent.png?v=1" sizes="any" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/FBI_Transparent.png?v=1" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/FBI_Transparent.png?v=1" />
+  <link rel="apple-touch-icon" href="./assets/FBI_Transparent.png?v=1" />
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -33,9 +34,15 @@
 <body class="flex min-h-full flex-col bg-slate-50 text-slate-800 antialiased">
 <header class="sticky top-0 z-50 border-b border-slate-200/90 bg-white/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white/80">
   <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-    <div class="flex h-16 items-center justify-between gap-4">
-      <a href="index.html" class="flex min-w-0 items-center gap-3 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold focus-visible:ring-offset-2" aria-label="Faith Based Innovations home">
-        <img src="./assets/FBI_Transparent.png" alt="Faith Based Innovations" width="48" height="48" class="h-10 w-10 shrink-0 object-contain" />
+    <div class="flex min-h-[5.5rem] items-center justify-between gap-4 py-2.5 sm:min-h-[6rem]">
+      <a href="index.html" class="flex min-w-0 items-center gap-4 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold focus-visible:ring-offset-2" aria-label="Faith Based Innovations home">
+        <img
+          src="./assets/FBI_Transparent.png"
+          alt="Faith Based Innovations"
+          width="80"
+          height="80"
+          class="h-16 w-16 shrink-0 object-contain"
+        />
         <div class="min-w-0 leading-tight">
           <p class="truncate text-sm font-bold tracking-tight text-navy">Faith Based Innovations, LLC</p>
           <p class="truncate text-xs text-slate-500">Premium local-first desktop software</p>
@@ -65,26 +72,26 @@
   </div>
 </header>
 <main class="flex-1">
-  <section class="relative overflow-hidden bg-navy py-14 text-white sm:py-16">
-    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_88%_0%,rgba(217,119,6,0.2),transparent_45%)]"></div>
+  <section class="relative overflow-hidden bg-navy py-20 text-white sm:py-28">
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_100%_70%_at_75%_0%,rgba(217,119,6,0.18),transparent_50%)]"></div>
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <p class="text-xs font-bold uppercase tracking-[0.2em] text-amber-200/90">About Faith Based Innovations, LLC</p>
-      <h1 class="mt-3 max-w-4xl text-4xl font-extrabold tracking-tight sm:text-5xl">We build with stewardship, discipline, and deep respect for serious work.</h1>
-      <p class="mt-5 max-w-3xl text-lg leading-relaxed text-slate-200">Faith Based Innovations, LLC is a faith-based software company creating premium desktop products with clear boundaries and clear accountability. We build with intent, clarity, and respect for your data and your time.</p>
+      <p class="text-xs font-bold uppercase tracking-[0.22em] text-amber-200/90">About Faith Based Innovations, LLC</p>
+      <h1 class="mt-6 max-w-4xl text-5xl font-bold leading-[1.08] tracking-tight sm:text-6xl">We build with stewardship, discipline, and deep respect for serious work.</h1>
+      <p class="mt-8 max-w-3xl text-xl leading-relaxed text-slate-200">Faith Based Innovations, LLC is a faith-based software company creating premium desktop products with clear boundaries and clear accountability. We build with intent, clarity, and respect for your data and your time.</p>
     </div>
   </section>
 
-  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+  <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-24 lg:px-8">
     <div class="grid gap-8 lg:grid-cols-3">
-      <article class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm ring-1 ring-slate-900/5">
+      <article class="rounded-2xl border border-slate-200 bg-white p-8 shadow-md ring-1 ring-slate-900/[0.04] transition duration-300 hover:shadow-lg">
         <h2 class="text-xl font-bold text-navy">Faith-based stewardship</h2>
         <p class="mt-3 text-slate-600 leading-relaxed">Faith Based Innovations, LLC is rooted in stewardship and disciplined work. We believe software should serve people with honesty, structure, and responsibility rather than manipulation or hype.</p>
       </article>
-      <article class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm ring-1 ring-slate-900/5">
+      <article class="rounded-2xl border border-slate-200 bg-white p-8 shadow-md ring-1 ring-slate-900/[0.04] transition duration-300 hover:shadow-lg">
         <h2 class="text-xl font-bold text-navy">Standalone product missions</h2>
         <p class="mt-3 text-slate-600 leading-relaxed"><strong class="text-navy">CFO</strong>, <strong class="text-navy">Eden</strong>, and <strong class="text-navy">Ledger</strong> are each standalone products with distinct jobs. We do not collapse finance, research, and identity into one confusing app.</p>
       </article>
-      <article class="rounded-2xl border border-slate-200 bg-white p-7 shadow-sm ring-1 ring-slate-900/5">
+      <article class="rounded-2xl border border-slate-200 bg-white p-8 shadow-md ring-1 ring-slate-900/[0.04] transition duration-300 hover:shadow-lg">
         <h2 class="text-xl font-bold text-navy">Controlled intelligence</h2>
         <p class="mt-3 text-slate-600 leading-relaxed">Steward is our controlled, rules-based intelligence layer. It is deterministic, auditable, and trustworthy by design—not open-ended generation and not magic.</p>
       </article>
@@ -119,13 +126,12 @@
   <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
     <div class="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
       <div class="max-w-md">
-        <div class="flex items-center gap-2 text-navy">
-          <svg class="h-3.5 w-3.5 shrink-0 text-faithGold opacity-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <path stroke-linecap="round" d="M12 4v16M7 12h10" />
-          </svg>
+        <div class="flex items-center gap-4 text-navy">
+          <img src="./assets/FBI_Transparent.png" alt="Faith Based Innovations" width="40" height="40" class="h-10 w-10 shrink-0 object-contain" />
           <p class="text-base font-bold tracking-tight">Faith Based Innovations, LLC</p>
         </div>
-        <p class="mt-2 text-sm leading-relaxed text-slate-600">Premium local-first desktop software—built with discipline, clarity, and respect for stewardship.</p>
+        <p class="mt-3 text-sm leading-relaxed text-slate-600">Premium local-first desktop software—built with discipline, clarity, and respect for stewardship.</p>
+        <p class="mt-4 text-xs font-medium uppercase tracking-[0.12em] text-slate-500">Local-first by conviction · Security-minded design · No engagement bait</p>
       </div>
       <div>
         <p class="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">Legal and support</p>
