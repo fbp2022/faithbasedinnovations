@@ -1,10 +1,10 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import * as site from "../src/data/site-config.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
+const buildInputDir = path.join(root, ".vite-input");
 
 const ROOT_PAGES = [
   "index.html",
@@ -20,6 +20,20 @@ const ROOT_PAGES = [
   "terms.html"
 ];
 
+/** Root HTML (file://) uses dist/ bundles; rewrite logo src when file exists in dist/assets. */
+function stampImgRefsToDist(html) {
+  const distAssetsDir = path.join(root, "dist", "assets");
+  if (!fs.existsSync(distAssetsDir)) return html;
+  const names = new Set(fs.readdirSync(distAssetsDir));
+  return html.replace(/src="(?:\.\/)?assets\/([^"]+)"/g, (full, rel) => {
+    const clean = rel.split("?")[0].split("#")[0];
+    if (names.has(clean)) {
+      return `src="dist/assets/${rel}"`;
+    }
+    return full;
+  });
+}
+
 const distIndex = path.join(root, "dist", "index.html");
 if (!fs.existsSync(distIndex)) {
   console.warn("stamp-root-html: dist/index.html missing; skip (run vite build first).");
@@ -28,27 +42,21 @@ if (!fs.existsSync(distIndex)) {
 
 const sample = fs.readFileSync(distIndex, "utf8");
 const cssM = sample.match(/href="\.\/assets\/([^"]+\.css)"/);
-const jsM = sample.match(/src="\.\/assets\/([^"]+\.js)"/);
-const logoFile = site.SITE.logoFile;
-const imgExt = /\.(svg|png|jpe?g|webp|gif)$/i;
-const assetSrcs = [...sample.matchAll(/src="(?:\.\/)?assets\/([^"]+)"/g)].map((m) => m[1]);
-const logoFromDist = assetSrcs.find((ref) => imgExt.test(ref) && !ref.endsWith(".js"));
-const logoSrc = logoFromDist
-  ? `dist/assets/${logoFromDist}`
-  : fs.existsSync(path.join(root, "dist", "assets", logoFile))
-    ? `dist/assets/${logoFile}`
-    : null;
+const jsM = sample.match(/src="\.\/assets\/(?:chunks\/)?([^"]+\.js)"/);
 
+/* Tailwind CDN pages have no Vite CSS/JS in dist/index.html — nothing to stamp. */
 if (!cssM || !jsM) {
-  console.error("stamp-root-html: could not parse CSS/JS paths from dist/index.html");
-  process.exit(1);
+  console.warn("stamp-root-html: no Vite CSS/JS in dist/index.html — skip bundle stamping (Tailwind CDN layout).");
+  process.exit(0);
 }
 
 const cssHref = `dist/assets/${cssM[1]}`;
-const jsSrc = `dist/assets/${jsM[1]}`;
+const jsSrc = sample.includes("./assets/chunks/")
+  ? `dist/assets/chunks/${jsM[1]}`
+  : `dist/assets/${jsM[1]}`;
 
 for (const name of ROOT_PAGES) {
-  const filePath = path.join(root, name);
+  const filePath = path.join(buildInputDir, name);
   if (!fs.existsSync(filePath)) continue;
 
   let html = fs.readFileSync(filePath, "utf8");
@@ -67,7 +75,6 @@ for (const name of ROOT_PAGES) {
       `\n  <script type="module" src="${jsSrc}"></script>\n`
     );
   } else {
-    /* Prebuild stamp already ran; Vite may have emitted a new chunk name — refresh paths. */
     html = html.replace(
       /<link rel="stylesheet" href="dist\/assets\/[^"]+\.css" \/>/,
       `<link rel="stylesheet" href="${cssHref}" />`
@@ -78,12 +85,9 @@ for (const name of ROOT_PAGES) {
     );
   }
 
-  if (logoSrc) {
-    const esc = logoFile.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
-    html = html.replace(new RegExp(`src="assets/${esc}"`, "g"), `src="${logoSrc}"`);
-  }
+  html = stampImgRefsToDist(html);
 
   fs.writeFileSync(filePath, html, "utf8");
 }
 
-console.log("stamp-root-html: root HTML now references built assets in dist/ (file:// friendly).");
+console.log("stamp-root-html: .vite-input/*.html now references built assets in dist/ (file:// friendly).");

@@ -8,33 +8,30 @@ import * as site from "../src/data/site-config.mjs";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.join(__dirname, "..");
 const pagesDir = path.join(root, "templates", "pages");
+/** Temporary Vite MPA inputs — cleaned after build. */
+const buildInputDir = path.join(root, ".vite-input");
 
-/** Static files live in ./assests/ or ./assets/ (no public/ folder). */
-const ASSET_SOURCE_DIRS = ["assests", "assets"];
-
-function firstExistingAsset(names) {
-  for (const folder of ASSET_SOURCE_DIRS) {
-    const dir = path.join(root, folder);
-    for (const n of names) {
-      if (fs.existsSync(path.join(dir, n))) return `assets/${n}`;
-    }
+function mergeCopyDir(srcDir, destDir) {
+  if (!fs.existsSync(srcDir)) return;
+  fs.mkdirSync(destDir, { recursive: true });
+  for (const name of fs.readdirSync(srcDir)) {
+    const from = path.join(srcDir, name);
+    const to = path.join(destDir, name);
+    const st = fs.statSync(from);
+    if (st.isDirectory()) mergeCopyDir(from, to);
+    else fs.copyFileSync(from, to);
   }
-  return null;
 }
 
-const heroOrbSrc = firstExistingAsset([
-  "hero-sphere.png",
-  "hero-sphere.webp",
-  "hero-orb.png",
-  "hero-orb.webp",
-  "orb.png"
-]);
-
+const logoFile = site.SITE.logoFile || "FBI_Transparent.png";
+const logoAbs = path.join(root, "assets", logoFile);
 const shared = {
   SITE: site.SITE,
   NAV_PRIMARY: site.NAV_PRIMARY,
   NAV_PRODUCTS: site.NAV_PRODUCTS,
-  PRODUCTS: site.PRODUCTS
+  PRODUCTS: site.PRODUCTS,
+  /** Relative to each HTML file (root or dist); null → tw-header uses inline placeholder. */
+  LOGO_HREF: fs.existsSync(logoAbs) ? `./assets/${logoFile}` : null
 };
 
 // Synchronous render so <% include %> never resolves to a Promise.
@@ -43,11 +40,10 @@ const pages = [
     name: "index",
     out: "index.html",
     data: {
-      title: `${site.SITE.brand} | Desktop software`,
+      title: `${site.SITE.brand} | Premium Desktop Software`,
       description: site.SITE.tagline,
       activeNav: "home",
-      pageClass: "home",
-      heroOrbSrc
+      pageClass: "home"
     }
   },
   { name: "products", out: "products.html", data: { title: `Products | ${site.SITE.legalName}`, description: "CFO, Eden, and Ledger.", activeNav: "products", pageClass: "products" } },
@@ -57,12 +53,16 @@ const pages = [
   { name: "compare", out: "compare.html", data: { title: `Compare | ${site.SITE.legalName}`, description: "CFO, Eden, and Ledger—distinct scope and Steward roles.", activeNav: "compare", pageClass: "compare" } },
   { name: "support", out: "support.html", data: { title: `Support | ${site.SITE.legalName}`, description: "Documentation, policies, and help.", activeNav: "support", pageClass: "support" } },
   { name: "about", out: "about.html", data: { title: `About | ${site.SITE.legalName}`, description: "Who we are and how we build.", activeNav: "about", pageClass: "about" } },
-  { name: "security", out: "security.html", data: { title: `Security | ${site.SITE.legalName}`, description: "Security posture.", activeNav: null, pageClass: "legal security" } },
-  { name: "privacy", out: "privacy.html", data: { title: `Privacy | ${site.SITE.legalName}`, description: "Privacy policy.", activeNav: null, pageClass: "legal privacy" } },
-  { name: "terms", out: "terms.html", data: { title: `Terms | ${site.SITE.legalName}`, description: "Terms of use.", activeNav: null, pageClass: "legal terms" } }
+  { name: "security", out: "security.html", data: { title: `Security | ${site.SITE.legalName}`, description: "Security posture.", activeNav: "security", pageClass: "legal security" } },
+  { name: "privacy", out: "privacy.html", data: { title: `Privacy | ${site.SITE.legalName}`, description: "Privacy policy.", activeNav: "privacy", pageClass: "legal privacy" } },
+  { name: "terms", out: "terms.html", data: { title: `Terms | ${site.SITE.legalName}`, description: "Terms of use.", activeNav: "terms", pageClass: "legal terms" } }
 ];
 
 const tmplRoot = path.join(root, "templates");
+
+fs.rmSync(buildInputDir, { recursive: true, force: true });
+fs.mkdirSync(buildInputDir, { recursive: true });
+mergeCopyDir(path.join(root, "assets"), path.join(buildInputDir, "assets"));
 
 for (const p of pages) {
   const filePath = path.join(pagesDir, `${p.name}.ejs`);
@@ -71,12 +71,12 @@ for (const p of pages) {
     filename: filePath,
     root: tmplRoot
   });
-  fs.writeFileSync(path.join(root, p.out), html, "utf8");
+  fs.writeFileSync(path.join(buildInputDir, p.out), html, "utf8");
 }
 
-console.log(`Rendered ${pages.length} pages to project root.`);
+console.log(`Rendered ${pages.length} pages to .vite-input/ for Vite build.`);
 
-/* Re-apply dist/ → root HTML stamping so file:// still works after every render (not only post-vite). */
+/* Re-apply dist/ → .vite-input HTML stamping when bundles exist (Tailwind-only sites skip). */
 const stampScript = path.join(__dirname, "stamp-root-html.mjs");
 if (fs.existsSync(path.join(root, "dist", "index.html"))) {
   const r = spawnSync(process.execPath, [stampScript], { cwd: root, stdio: "inherit" });
@@ -87,6 +87,6 @@ if (fs.existsSync(path.join(root, "dist", "index.html"))) {
   }
 } else {
   console.warn(
-    "No dist/ output yet. Run `npm run build` once (or use `npm run dev`). Opening root *.html via file:// needs a successful build for CSS, JS, and logo paths."
+    "No dist/ output yet. Run `npm run build` once (or use `npm run dev`). Preview: open dist/index.html after build."
   );
 }
