@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ledger | Faith Based Innovations, LLC</title>
+  <meta name="description" content="Ledger is a local-first encrypted identity vault and deterministic document prefilling system—structured for up to two people (for example, husband and wife). Steward helps parse and map fields—it never guesses or generates answers you did not provide." />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/FBI_Transparent.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/FBI_Transparent.png" />
+  <link rel="apple-touch-icon" href="./assets/FBI_Transparent.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            navy: "#0f172a",
+            navySoft: "#1e293b",
+            faithGold: "#d97706"
+          },
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>
+<body class="flex min-h-full flex-col bg-slate-50 text-slate-800 antialiased">
+<header class="sticky top-0 z-50 border-b border-slate-200/90 bg-white/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white/80">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between gap-4">
+      <a href="index.html" class="flex min-w-0 items-center gap-3 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold focus-visible:ring-offset-2" aria-label="Faith Based Innovations home">
+        <img src="./assets/FBI_Transparent.png" alt="Faith Based Innovations" width="48" height="48" class="h-10 w-10 shrink-0 object-contain" />
+        <div class="min-w-0 leading-tight">
+          <p class="truncate text-sm font-bold tracking-tight text-navy">Faith Based Innovations, LLC</p>
+          <p class="truncate text-xs text-slate-500">Premium local-first desktop software</p>
+        </div>
+      </a>
+      <button type="button" id="tw-menu-btn" class="inline-flex items-center justify-center rounded-lg p-2 text-slate-600 hover:bg-slate-100 md:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold" aria-expanded="false" aria-controls="tw-menu-panel">
+        <span class="sr-only">Open menu</span>
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <nav class="hidden items-center gap-5 lg:gap-6 md:flex" aria-label="Primary">
+        <a href="index.html" class="text-sm font-medium text-slate-600 transition-colors hover:text-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold focus-visible:ring-offset-2 rounded-sm">Home</a>
+        <a href="products.html" class="text-sm font-semibold text-navy">Products</a>
+        <a href="compare.html" class="text-sm font-medium text-slate-600 transition-colors hover:text-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold focus-visible:ring-offset-2 rounded-sm">Compare</a>
+        <a href="about.html" class="text-sm font-medium text-slate-600 transition-colors hover:text-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold focus-visible:ring-offset-2 rounded-sm">About</a>
+        <a href="support.html" class="text-sm font-medium text-slate-600 transition-colors hover:text-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold focus-visible:ring-offset-2 rounded-sm">Support</a>
+      </nav>
+    </div>
+    <div id="tw-menu-panel" class="hidden border-t border-slate-200 py-3 md:hidden">
+      <nav class="grid gap-1" aria-label="Mobile">
+        <a href="index.html" class="rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold">Home</a>
+        <a href="products.html" class="rounded-lg px-3 py-2 text-sm font-semibold text-navy bg-slate-100">Products</a>
+        <a href="compare.html" class="rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold">Compare</a>
+        <a href="about.html" class="rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold">About</a>
+        <a href="support.html" class="rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold">Support</a>
+      </nav>
+    </div>
+  </div>
+</header>
+<main class="flex-1">
+  <section class="bg-navy py-14 text-white sm:py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-amber-200">In development</span>
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-200/80">Identity &amp; documents</span>
+      </div>
+      <h1 class="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl">Secure vault. Deterministic documents.</h1>
+      <p class="mt-5 max-w-3xl text-lg text-slate-200 leading-relaxed">Ledger is a local-first encrypted identity vault and deterministic document prefilling system—structured for up to two people (for example, husband and wife). Steward helps parse and map fields—it never guesses or generates answers you did not provide.</p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="compare.html" class="inline-flex rounded-lg bg-faithGold px-5 py-2.5 text-sm font-semibold text-white hover:bg-amber-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-navy">Compare products</a>
+        <a href="products.html" class="inline-flex rounded-lg border border-white/25 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/10">All products</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
+    <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-xl shadow-slate-900/10">
+      <div class="flex items-center gap-1 border-b border-slate-700/70 bg-slate-900 px-4 py-2.5">
+        <span class="h-2.5 w-2.5 rounded-full bg-rose-400/70"></span>
+        <span class="h-2.5 w-2.5 rounded-full bg-amber-300/70"></span>
+        <span class="h-2.5 w-2.5 rounded-full bg-emerald-400/70"></span>
+        <span class="ml-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">Ledger vault</span>
+      </div>
+      <div class="grid grid-cols-5 gap-3 p-4">
+        <div class="col-span-3 space-y-3">
+          <div class="h-8 rounded-lg bg-slate-800"></div>
+          <div class="h-16 rounded-lg bg-slate-800/80"></div>
+          <div class="h-20 rounded-lg bg-slate-800/70"></div>
+        </div>
+        <div class="col-span-2 space-y-3">
+          <div class="h-11 rounded-lg border border-faithGold/40 bg-faithGold/15"></div>
+          <div class="h-11 rounded-lg bg-slate-700/80"></div>
+          <div class="h-11 rounded-lg bg-slate-700/70"></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 class="text-2xl font-bold text-navy">Vault first—then documents, filled exactly</h2>
+      <p class="mt-4 text-slate-600 leading-relaxed">Ledger is a local-first encrypted identity vault and deterministic document prefilling system—built for sensitive data and precise execution, not as a secondary tab inside another app.</p>
+      <p class="mt-4 text-slate-600 leading-relaxed">Store identity fields (including sensitive items such as a Social Security number if you choose), address and employment history, relationships, documents, and profiles for <strong class="text-navy">up to two people</strong>—for example, spouses—all encrypted on your machine.</p>
+    </div>
+  </section>
+
+  <section class="border-y border-slate-200 bg-white py-16">
+    <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold text-navy">People and references</h2>
+      <p class="mt-4 text-slate-600 leading-relaxed">Track people you have known: relationship type, organization, role, relevance, and when you met.</p>
+      <p class="mt-4 text-slate-600 leading-relaxed">Duration is calculated from <strong class="text-navy">local system time</strong>, so “how long you have known someone” stays accurate without manual edits.</p>
+    </div>
+  </section>
+
+  <section class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
+    <div class="order-2 lg:order-1">
+      <h2 class="text-2xl font-bold text-navy">Deterministic filling—never invented answers</h2>
+      <p class="mt-4 text-slate-600 leading-relaxed">Ledger maps document fields to stored values and fills only exact matches. Missing data stays empty—never guessed or inferred.</p>
+      <p class="mt-4 text-slate-600 leading-relaxed"><strong class="text-navy">Steward</strong> helps parse documents, map fields, and guide workflows. It does <em>not</em> generate answers you did not provide.</p>
+    </div>
+    <div class="order-1 overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-xl shadow-slate-900/10 lg:order-2">
+      <div class="flex items-center justify-between border-b border-slate-700/70 bg-slate-900 px-4 py-2.5">
+        <span class="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">Document mapping</span>
+        <span class="rounded bg-emerald-500/20 px-2 py-0.5 text-[10px] font-semibold text-emerald-300">exact match only</span>
+      </div>
+      <div class="space-y-3 p-4">
+        <div class="h-8 rounded-lg bg-slate-800"></div>
+        <div class="grid grid-cols-2 gap-3">
+          <div class="h-10 rounded-lg bg-slate-800/80"></div>
+          <div class="h-10 rounded-lg bg-slate-800/70"></div>
+          <div class="h-10 rounded-lg bg-slate-800/70"></div>
+          <div class="h-10 rounded-lg bg-slate-800/60"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-navy py-14 text-white">
+    <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold">Alongside CFO and Eden</h2>
+      <p class="mt-4 text-slate-200 leading-relaxed"><strong class="text-white">CFO</strong> handles financial operating logic. <strong class="text-white">Eden</strong> handles research ingestion and evaluation. Ledger handles identity, references, and document execution—three products, one standard, connected through Steward.</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="product-cfo.html" class="rounded-lg border border-white/25 px-4 py-2 text-sm font-semibold hover:bg-white/10">CFO</a>
+        <a href="product-eden.html" class="rounded-lg border border-white/25 px-4 py-2 text-sm font-semibold hover:bg-white/10">Eden</a>
+        <a href="compare.html" class="rounded-lg bg-faithGold px-4 py-2 text-sm font-semibold text-navy hover:bg-amber-500">Compare all</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="border-y border-amber-200/60 bg-amber-50/80" aria-label="Product availability">
+    <div class="mx-auto max-w-4xl px-4 py-10 text-center sm:px-6 lg:px-8">
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-amber-800">In development</p>
+      <p class="mt-3 text-base text-slate-700">Not available for purchase, download, or access. This is being built.</p>
+      <p class="mt-2 text-sm font-semibold text-navy" role="status">Currently being built</p>
+    </div>
+  </section>
+
+</main>
+<footer class="mt-auto border-t border-slate-200 bg-white">
+  <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="flex flex-col gap-10 lg:flex-row lg:items-start lg:justify-between">
+      <div class="max-w-md">
+        <div class="flex items-center gap-2 text-navy">
+          <svg class="h-3.5 w-3.5 shrink-0 text-faithGold opacity-90" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path stroke-linecap="round" d="M12 4v16M7 12h10" />
+          </svg>
+          <p class="text-base font-bold tracking-tight">Faith Based Innovations, LLC</p>
+        </div>
+        <p class="mt-2 text-sm leading-relaxed text-slate-600">Premium local-first desktop software—built with discipline, clarity, and respect for stewardship.</p>
+      </div>
+      <div>
+        <p class="text-xs font-bold uppercase tracking-[0.16em] text-slate-500">Legal and support</p>
+        <nav class="mt-4 grid grid-cols-1 gap-y-2 text-sm text-slate-600 sm:grid-cols-3 sm:gap-x-8" aria-label="Legal and support">
+          <a href="security.html" class="hover:text-navy focus:outline-none focus-visible:text-navy focus-visible:underline">Security</a>
+          <a href="privacy.html" class="hover:text-navy focus:outline-none focus-visible:text-navy focus-visible:underline">Privacy</a>
+          <a href="terms.html" class="hover:text-navy focus:outline-none focus-visible:text-navy focus-visible:underline">Terms</a>
+        </nav>
+      </div>
+    </div>
+    <div class="mt-10 flex flex-col gap-2 border-t border-slate-200 pt-8 text-xs text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+      <span>© 2026 Faith Based Innovations, LLC. All rights reserved.</span>
+      <span class="text-slate-400">CFO, Eden, and Ledger are product names of Faith Based Innovations, LLC.</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+  (function () {
+    var btn = document.getElementById("tw-menu-btn");
+    var panel = document.getElementById("tw-menu-panel");
+    if (!btn || !panel) return;
+    btn.addEventListener("click", function () {
+      var open = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", open ? "false" : "true");
+      panel.classList.toggle("hidden", open);
+    });
+  })();
+</script>
+
+</body>
+</html>
