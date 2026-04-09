@@ -1,5 +1,4 @@
 import ejs from "ejs";
-import { spawnSync } from "node:child_process";
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -30,7 +29,7 @@ const shared = {
   NAV_PRIMARY: site.NAV_PRIMARY,
   NAV_PRODUCTS: site.NAV_PRODUCTS,
   PRODUCTS: site.PRODUCTS,
-  /** Relative to each HTML file (root or dist); null → tw-header uses inline placeholder. */
+  /** Relative to each HTML file at project root; null → tw-header uses inline placeholder. */
   LOGO_HREF: fs.existsSync(logoAbs) ? `./assets/${logoFile}` : null
 };
 
@@ -75,18 +74,3 @@ for (const p of pages) {
 }
 
 console.log(`Rendered ${pages.length} pages to .vite-input/ for Vite build.`);
-
-/* Re-apply dist/ → .vite-input HTML stamping when bundles exist (Tailwind-only sites skip). */
-const stampScript = path.join(__dirname, "stamp-root-html.mjs");
-if (fs.existsSync(path.join(root, "dist", "index.html"))) {
-  const r = spawnSync(process.execPath, [stampScript], { cwd: root, stdio: "inherit" });
-  if (r.status !== 0) {
-    console.warn(
-      "Stamp step had issues — run `npm run build` to refresh dist/, then save any template or run render again."
-    );
-  }
-} else {
-  console.warn(
-    "No dist/ output yet. Run `npm run build` once (or use `npm run dev`). Preview: open dist/index.html after build."
-  );
-}
