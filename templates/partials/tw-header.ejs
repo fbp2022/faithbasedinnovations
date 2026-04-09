@@ -1,0 +1,45 @@
+<% var navLink = function (id) {
+  var on = typeof activeNav !== "undefined" && activeNav === id;
+  return on
+    ? "text-sm font-semibold text-navy"
+    : "text-sm font-medium text-slate-600 transition-colors hover:text-navy focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold focus-visible:ring-offset-2 rounded-sm";
+};
+var navLinkMobile = function (id) {
+  var on = typeof activeNav !== "undefined" && activeNav === id;
+  return on
+    ? "rounded-lg px-3 py-2 text-sm font-semibold text-navy bg-slate-100"
+    : "rounded-lg px-3 py-2 text-sm text-slate-700 hover:bg-slate-100 focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold";
+}; -%>
+<header class="sticky top-0 z-50 border-b border-slate-200/90 bg-white/95 shadow-sm backdrop-blur supports-[backdrop-filter]:bg-white/80">
+  <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+    <div class="flex h-16 items-center justify-between gap-4">
+      <a href="index.html" class="flex min-w-0 items-center gap-3 rounded-md focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold focus-visible:ring-offset-2" aria-label="Faith Based Innovations home">
+        <img src="./assets/FBI_Transparent.png" alt="Faith Based Innovations" width="48" height="48" class="h-10 w-10 shrink-0 object-contain" />
+        <div class="min-w-0 leading-tight">
+          <p class="truncate text-sm font-bold tracking-tight text-navy">Faith Based Innovations, LLC</p>
+          <p class="truncate text-xs text-slate-500">Premium local-first desktop software</p>
+        </div>
+      </a>
+      <button type="button" id="tw-menu-btn" class="inline-flex items-center justify-center rounded-lg p-2 text-slate-600 hover:bg-slate-100 md:hidden focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold" aria-expanded="false" aria-controls="tw-menu-panel">
+        <span class="sr-only">Open menu</span>
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24" aria-hidden="true"><path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <nav class="hidden items-center gap-5 lg:gap-6 md:flex" aria-label="Primary">
+        <a href="index.html" class="<%= navLink('home') %>">Home</a>
+        <a href="products.html" class="<%= navLink('products') %>">Products</a>
+        <a href="compare.html" class="<%= navLink('compare') %>">Compare</a>
+        <a href="about.html" class="<%= navLink('about') %>">About</a>
+        <a href="support.html" class="<%= navLink('support') %>">Support</a>
+      </nav>
+    </div>
+    <div id="tw-menu-panel" class="hidden border-t border-slate-200 py-3 md:hidden">
+      <nav class="grid gap-1" aria-label="Mobile">
+        <a href="index.html" class="<%= navLinkMobile('home') %>">Home</a>
+        <a href="products.html" class="<%= navLinkMobile('products') %>">Products</a>
+        <a href="compare.html" class="<%= navLinkMobile('compare') %>">Compare</a>
+        <a href="about.html" class="<%= navLinkMobile('about') %>">About</a>
+        <a href="support.html" class="<%= navLinkMobile('support') %>">Support</a>
+      </nav>
+    </div>
+  </div>
+</header>

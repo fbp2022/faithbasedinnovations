@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en" class="h-full scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title><%= typeof title !== "undefined" ? title : SITE.brand + " | Premium software" %></title>
+  <meta name="description" content="<%= typeof description !== "undefined" ? description : SITE.tagline %>" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/FBI_Transparent.png" />
+  <link rel="icon" type="image/png" sizes="192x192" href="./assets/FBI_Transparent.png" />
+  <link rel="apple-touch-icon" href="./assets/FBI_Transparent.png" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            navy: "#0f172a",
+            navySoft: "#1e293b",
+            faithGold: "#d97706"
+          },
+          fontFamily: {
+            sans: ["Inter", "ui-sans-serif", "system-ui", "Segoe UI", "Roboto", "Helvetica Neue", "Arial", "sans-serif"]
+          }
+        }
+      }
+    };
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+</head>

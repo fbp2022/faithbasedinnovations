@@ -1,0 +1,12 @@
+<script>
+  (function () {
+    var btn = document.getElementById("tw-menu-btn");
+    var panel = document.getElementById("tw-menu-panel");
+    if (!btn || !panel) return;
+    btn.addEventListener("click", function () {
+      var open = btn.getAttribute("aria-expanded") === "true";
+      btn.setAttribute("aria-expanded", open ? "false" : "true");
+      panel.classList.toggle("hidden", open);
+    });
+  })();
+</script>
