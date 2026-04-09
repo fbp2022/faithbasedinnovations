@@ -1,0 +1,45 @@
+<%- include('../partials/tw-head') -%>
+<body class="flex min-h-full flex-col bg-slate-50 text-slate-800 antialiased">
+<%- include('../partials/tw-header') -%>
+<main class="flex-1">
+  <section class="border-b border-slate-200 bg-white py-12 sm:py-14">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-faithGold">Security</p>
+      <h1 class="mt-2 text-3xl font-extrabold tracking-tight text-navy sm:text-4xl">Security posture</h1>
+      <p class="mt-3 text-slate-600">A plain-language overview of how we approach risk, access, and infrastructure.</p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="space-y-4">
+      <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-lg font-bold text-navy">What this means</h2>
+        <p class="mt-2 text-sm leading-relaxed text-slate-600">We reduce attack surface by keeping systems understandable, limiting external dependencies, and preferring architectures that do not require blind trust.</p>
+      </article>
+      <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-lg font-bold text-navy">Access</h2>
+        <p class="mt-2 text-sm leading-relaxed text-slate-600">Administrative access follows least privilege. Privileged actions are limited, reviewed, and treated as sensitive operations.</p>
+      </article>
+      <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-lg font-bold text-navy">Encryption</h2>
+        <p class="mt-2 text-sm leading-relaxed text-slate-600">We use modern encryption for data in transit and at rest where those controls apply. Design favors fewer data copies over convenience.</p>
+      </article>
+      <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-lg font-bold text-navy">Infrastructure</h2>
+        <p class="mt-2 text-sm leading-relaxed text-slate-600">External services are added deliberately. Each integration is a liability budget line, not a feature checkbox.</p>
+      </article>
+      <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-lg font-bold text-navy">People and process</h2>
+        <p class="mt-2 text-sm leading-relaxed text-slate-600">Operational discipline and verification are part of the model—not an afterthought.</p>
+      </article>
+      <article class="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+        <h2 class="text-lg font-bold text-navy">Reporting</h2>
+        <p class="mt-2 text-sm leading-relaxed text-slate-600">A coordinated disclosure channel will be published for production services. Until then, this section stays intentionally minimal.</p>
+      </article>
+    </div>
+  </section>
+</main>
+<%- include('../partials/tw-footer') %>
+<%- include('../partials/tw-scripts') %>
+</body>
+</html>

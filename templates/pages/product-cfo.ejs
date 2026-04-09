@@ -1,0 +1,106 @@
+<%- include('../partials/tw-head') -%>
+<body class="flex min-h-full flex-col bg-slate-50 text-slate-800 antialiased">
+<%- include('../partials/tw-header') -%>
+<main class="flex-1">
+  <section class="bg-navy py-14 text-white sm:py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex flex-wrap items-center gap-3">
+        <span class="rounded-full bg-white/10 px-3 py-1 text-xs font-semibold text-amber-200"><%= SITE.availability.badge %></span>
+        <span class="text-xs font-bold uppercase tracking-widest text-amber-200/80"><%= PRODUCTS.cfo.tag %></span>
+      </div>
+      <h1 class="mt-4 text-4xl font-extrabold tracking-tight sm:text-5xl"><%= PRODUCTS.cfo.headline %></h1>
+      <p class="mt-5 max-w-3xl text-lg text-slate-200 leading-relaxed"><%= PRODUCTS.cfo.subhead %></p>
+      <div class="mt-8 flex flex-wrap gap-3">
+        <a href="compare.html" class="inline-flex rounded-lg bg-faithGold px-5 py-2.5 text-sm font-semibold text-white hover:bg-amber-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-navy">Compare products</a>
+        <a href="products.html" class="inline-flex rounded-lg border border-white/25 px-5 py-2.5 text-sm font-semibold text-white hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50">All products</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
+    <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-xl shadow-slate-900/10">
+      <div class="flex items-center gap-1 border-b border-slate-700/70 bg-slate-900 px-4 py-2.5">
+        <span class="h-2.5 w-2.5 rounded-full bg-rose-400/70"></span>
+        <span class="h-2.5 w-2.5 rounded-full bg-amber-300/70"></span>
+        <span class="h-2.5 w-2.5 rounded-full bg-emerald-400/70"></span>
+        <span class="ml-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">CFO dashboard</span>
+      </div>
+      <div class="grid grid-cols-5 gap-3 p-4">
+        <div class="col-span-3 space-y-3">
+          <div class="h-7 rounded-lg bg-slate-800"></div>
+          <div class="grid grid-cols-2 gap-3">
+            <div class="h-20 rounded-lg bg-slate-800/80"></div>
+            <div class="h-20 rounded-lg bg-slate-800/70"></div>
+          </div>
+          <div class="h-24 rounded-lg bg-slate-800/70"></div>
+        </div>
+        <div class="col-span-2 space-y-3">
+          <div class="h-11 rounded-lg border border-faithGold/40 bg-faithGold/15"></div>
+          <div class="h-11 rounded-lg bg-slate-700/80"></div>
+          <div class="h-11 rounded-lg bg-slate-700/70"></div>
+          <div class="h-11 rounded-lg bg-slate-700/60"></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <h2 class="text-2xl font-bold text-navy">A financial operating system—not a dashboard toy</h2>
+      <p class="mt-4 text-slate-600 leading-relaxed">CFO is built for money in motion: structure, planning, and decisions grounded in your data. It is not a generic tracker or a thin budgeting app—it interprets, analyzes, and guides using rules and real inputs.</p>
+      <p class="mt-4 text-slate-600 leading-relaxed"><strong class="text-navy"><%= SITE.steward.name %></strong> inside CFO interprets financial data, surfaces patterns and risks, and calculates projections and runway. Guidance is deterministic: tied to what you record, not invented.</p>
+    </div>
+  </section>
+
+  <section class="border-y border-slate-200 bg-white py-16">
+    <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-center text-2xl font-bold text-navy">What CFO handles</h2>
+      <ul class="mt-8 space-y-3 text-slate-600">
+        <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-faithGold"></span>Budgeting and financial planning</li>
+        <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-faithGold"></span>Forecasting and cash-flow clarity</li>
+        <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-faithGold"></span>OCR ingestion for statements and documents</li>
+        <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-faithGold"></span>Optional Plaid integration—explicit and optional, never a silent default</li>
+        <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-faithGold"></span>Structured financial intelligence and advanced organization</li>
+      </ul>
+      <p class="mt-8 text-center text-sm text-slate-500">Local-first and privacy-first. Your financial data stays oriented to your machine and your choices.</p>
+    </div>
+  </section>
+
+  <section class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
+    <div class="order-2 lg:order-1">
+      <h2 class="text-2xl font-bold text-navy"><%= SITE.steward.name %> without guesswork</h2>
+      <p class="mt-4 text-slate-600 leading-relaxed">Steward is a controlled, rules-based layer—not vague automation. In CFO, projections and signals trace back to sources and policy.</p>
+      <p class="mt-4 text-slate-600 leading-relaxed">No fabricated balances or filler numbers. Where information is missing, CFO does not pretend otherwise.</p>
+    </div>
+    <div class="order-1 overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-xl shadow-slate-900/10 lg:order-2">
+      <div class="flex items-center justify-between border-b border-slate-700/70 bg-slate-900 px-4 py-2.5">
+        <span class="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">Forecast panel</span>
+        <span class="rounded bg-emerald-500/20 px-2 py-0.5 text-[10px] font-semibold text-emerald-300">deterministic</span>
+      </div>
+      <div class="space-y-3 p-4">
+        <div class="h-8 rounded-lg bg-slate-800"></div>
+        <div class="grid grid-cols-3 gap-3">
+          <div class="h-16 rounded-lg bg-slate-800/80"></div>
+          <div class="h-16 rounded-lg bg-slate-800/70"></div>
+          <div class="h-16 rounded-lg bg-slate-800/60"></div>
+        </div>
+        <div class="h-20 rounded-lg bg-slate-800/70"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-navy py-14 text-white">
+    <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">
+      <h2 class="text-2xl font-bold">Same ecosystem, different jobs</h2>
+      <p class="mt-4 text-slate-200 leading-relaxed">CFO is the flagship financial title. <strong class="text-white">Eden</strong> is research software. <strong class="text-white">Ledger</strong> is identity and document execution. Separate products—shared discipline and <%= SITE.steward.name %>.</p>
+      <div class="mt-8 flex flex-wrap justify-center gap-3">
+        <a href="product-eden.html" class="rounded-lg border border-white/25 px-4 py-2 text-sm font-semibold hover:bg-white/10">Eden</a>
+        <a href="product-ledger.html" class="rounded-lg border border-white/25 px-4 py-2 text-sm font-semibold hover:bg-white/10">Ledger</a>
+        <a href="compare.html" class="rounded-lg bg-faithGold px-4 py-2 text-sm font-semibold text-navy hover:bg-amber-500">Compare all</a>
+      </div>
+    </div>
+  </section>
+
+  <%- include('../partials/tw-availability') %>
+</main>
+<%- include('../partials/tw-footer') %>
+<%- include('../partials/tw-scripts') %>
+</body>
+</html>

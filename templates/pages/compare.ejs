@@ -1,0 +1,67 @@
+<%- include('../partials/tw-head') -%>
+<body class="flex min-h-full flex-col bg-slate-50 text-slate-800 antialiased">
+<%- include('../partials/tw-header') -%>
+<main class="flex-1">
+  <section class="bg-navy py-14 text-white sm:py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <p class="text-xs font-bold uppercase tracking-[0.2em] text-amber-200/90">Compare</p>
+      <h1 class="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">Three distinct products</h1>
+      <p class="mt-5 max-w-2xl text-lg text-slate-200">Use this view to understand scope and boundaries. None of these titles are offered for sale or download today—the comparison exists so the architecture reads clearly.</p>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+    <div class="overflow-x-auto rounded-2xl border border-slate-200 bg-white shadow-sm ring-1 ring-slate-900/5">
+      <table class="min-w-[720px] w-full border-collapse text-left text-sm">
+        <thead>
+          <tr class="border-b border-slate-200 bg-slate-50">
+            <th scope="col" class="px-4 py-4 font-semibold text-navy sm:px-6"></th>
+            <th scope="col" class="px-4 py-4 font-semibold text-navy sm:px-6">CFO</th>
+            <th scope="col" class="px-4 py-4 font-semibold text-navy sm:px-6">Eden</th>
+            <th scope="col" class="px-4 py-4 font-semibold text-navy sm:px-6">Ledger</th>
+          </tr>
+        </thead>
+        <tbody class="divide-y divide-slate-100 text-slate-600">
+          <tr>
+            <th scope="row" class="whitespace-nowrap bg-slate-50/80 px-4 py-4 font-semibold text-navy sm:px-6">Core job</th>
+            <td class="px-4 py-4 align-top sm:px-6">Financial operating system: budgeting, planning, forecasting, cash flow, structured money intelligence.</td>
+            <td class="px-4 py-4 align-top sm:px-6">Research aggregation, analysis, prioritization, and source evaluation with citations.</td>
+            <td class="px-4 py-4 align-top sm:px-6">Encrypted identity vault and deterministic document prefilling.</td>
+          </tr>
+          <tr>
+            <th scope="row" class="whitespace-nowrap bg-slate-50/80 px-4 py-4 font-semibold text-navy sm:px-6">Typical inputs</th>
+            <td class="px-4 py-4 align-top sm:px-6">Accounts, plans, OCR documents, optional Plaid—financial data only.</td>
+            <td class="px-4 py-4 align-top sm:px-6">Recordings, video, articles, images, screenshots, public or user-provided material.</td>
+            <td class="px-4 py-4 align-top sm:px-6">Identity fields, history, relationships, documents—up to two people (e.g. spouses).</td>
+          </tr>
+          <tr>
+            <th scope="row" class="whitespace-nowrap bg-slate-50/80 px-4 py-4 font-semibold text-navy sm:px-6"><%= SITE.steward.name %></th>
+            <td class="px-4 py-4 align-top sm:px-6">Interprets finances; surfaces patterns, risks, projections, and runway from recorded data.</td>
+            <td class="px-4 py-4 align-top sm:px-6">Prioritizes facts to your context; scores sources on consistency, evidence, agreement, relevance.</td>
+            <td class="px-4 py-4 align-top sm:px-6">Helps parse documents and map fields; never generates or guesses field values.</td>
+          </tr>
+          <tr>
+            <th scope="row" class="whitespace-nowrap bg-slate-50/80 px-4 py-4 font-semibold text-navy sm:px-6">Explicitly not</th>
+            <td class="px-4 py-4 align-top sm:px-6">A research tool, life tracker, or open-ended chat for money.</td>
+            <td class="px-4 py-4 align-top sm:px-6">A CFO mode, ghostwriter, paywall bypass, or judge of people.</td>
+            <td class="px-4 py-4 align-top sm:px-6">A finance app, research notebook, or autofill that infers missing answers.</td>
+          </tr>
+          <tr class="bg-amber-50/50">
+            <th scope="row" class="whitespace-nowrap px-4 py-4 font-semibold text-navy sm:px-6">Availability</th>
+            <td class="px-4 py-4 sm:px-6 font-medium text-slate-700" colspan="3"><%= SITE.availability.line %></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="mt-8 flex flex-wrap gap-3">
+      <a href="product-cfo.html" class="inline-flex rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-navy shadow-sm hover:border-faithGold hover:text-faithGold">CFO</a>
+      <a href="product-eden.html" class="inline-flex rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-navy shadow-sm hover:border-faithGold hover:text-faithGold">Eden</a>
+      <a href="product-ledger.html" class="inline-flex rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-navy shadow-sm hover:border-faithGold hover:text-faithGold">Ledger</a>
+      <span class="inline-flex items-center rounded-lg border border-amber-200 bg-amber-50 px-4 py-2 text-sm font-semibold text-amber-900" role="status"><%= SITE.availability.ctaLabel %></span>
+    </div>
+  </section>
+</main>
+<%- include('../partials/tw-footer') %>
+<%- include('../partials/tw-scripts') %>
+</body>
+</html>
