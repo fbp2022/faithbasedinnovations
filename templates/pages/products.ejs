@@ -2,43 +2,51 @@
 <body class="flex min-h-full flex-col bg-slate-50 text-slate-800 antialiased">
 <%- include('../partials/tw-header') -%>
 <main class="flex-1">
-  <section class="bg-navy py-14 text-white sm:py-16">
-    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-      <p class="text-xs font-bold uppercase tracking-[0.2em] text-amber-200/90">Products</p>
-      <h1 class="mt-3 text-4xl font-extrabold tracking-tight sm:text-5xl">CFO, Eden, and Ledger</h1>
-      <p class="mt-5 max-w-2xl text-lg text-slate-200">Three standalone applications. One parent company, one bar for quality, and <%= SITE.steward.name %> as the shared intelligence layer—without blending finance, research, and identity into a single confused product.</p>
+  <section class="relative overflow-hidden bg-navy py-20 text-white sm:py-24">
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_100%_80%_at_80%_0%,rgba(217,119,6,0.16),transparent_50%)]"></div>
+    <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <p class="text-xs font-bold uppercase tracking-[0.22em] text-amber-200/90">Products</p>
+      <h1 class="mt-4 max-w-4xl text-5xl font-bold leading-[1.08] tracking-tight sm:text-6xl">CFO, Eden, and Ledger</h1>
+      <p class="mt-8 max-w-2xl text-xl leading-relaxed text-slate-200">Three standalone applications. One parent company, one bar for quality, and <%= SITE.steward.name %> as the shared intelligence layer—without blending finance, research, and identity into a single confused product.</p>
     </div>
   </section>
 
-  <section class="mx-auto max-w-3xl px-4 py-12 sm:px-6 lg:px-8">
-    <h2 class="text-xl font-bold text-navy"><%= SITE.steward.name %></h2>
-    <p class="mt-3 text-slate-600 leading-relaxed"><%= SITE.steward.short %></p>
+  <section class="mx-auto max-w-3xl px-4 py-16 sm:px-6 lg:px-8">
+    <h2 class="text-2xl font-bold text-navy"><%= SITE.steward.name %></h2>
+    <p class="mt-5 text-lg leading-relaxed text-slate-600"><%= SITE.steward.short %></p>
   </section>
 
-  <section class="mx-auto max-w-7xl px-4 pb-16 sm:px-6 lg:px-8">
-    <div class="grid gap-8 lg:grid-cols-3">
+  <section class="mx-auto max-w-7xl px-4 pb-20 sm:px-6 lg:px-8">
+    <div class="grid gap-10 lg:grid-cols-3">
       <% NAV_PRODUCTS.forEach(function (p) { %>
-      <article class="flex flex-col rounded-2xl border border-slate-200 bg-white p-8 shadow-sm ring-1 ring-slate-900/5 transition hover:-translate-y-0.5 hover:shadow-lg">
+      <article class="flex flex-col rounded-3xl border border-slate-200/90 bg-white p-8 shadow-lg shadow-slate-900/[0.06] ring-1 ring-slate-900/[0.04] transition duration-300 hover:-translate-y-1 hover:shadow-xl">
         <div class="flex flex-wrap items-center justify-between gap-2">
           <span class="text-xs font-bold uppercase tracking-wider text-faithGold"><%= PRODUCTS[p.id].tag %></span>
           <span class="rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-semibold text-amber-800"><%= SITE.availability.badge %></span>
         </div>
-        <h2 class="mt-6 text-2xl font-bold text-navy"><%= p.label %></h2>
+        <h2 class="mt-12 text-2xl font-bold text-navy"><%= p.label %></h2>
         <p class="mt-2 text-sm font-medium text-slate-500"><%= PRODUCTS[p.id].headline %></p>
         <p class="mt-4 flex-1 text-sm leading-relaxed text-slate-600"><%= PRODUCTS[p.id].subhead %></p>
-        <a href="<%= p.href %>" class="mt-8 inline-flex text-sm font-semibold text-navy hover:text-faithGold focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold focus-visible:ring-offset-2 rounded-sm">View product page</a>
+        <a href="<%= p.href %>" class="mt-10 inline-flex min-h-[2.75rem] items-center text-sm font-semibold text-navy transition duration-200 hover:text-faithGold focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold focus-visible:ring-offset-2 rounded-sm">View product page →</a>
       </article>
       <% }); %>
     </div>
   </section>
 
-  <section class="border-t border-slate-200 bg-white py-12">
-    <div class="mx-auto flex max-w-7xl flex-col items-start justify-between gap-6 px-4 sm:flex-row sm:items-center sm:px-6 lg:px-8">
-      <div>
-        <h2 class="text-xl font-bold text-navy">Compare at a glance</h2>
-        <p class="mt-1 text-sm text-slate-600">See how scope, inputs, and <%= SITE.steward.name %> differ across the line-up.</p>
+  <section class="border-t border-slate-200 bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
+      <div class="grid gap-12 lg:grid-cols-[1fr_auto] lg:items-end">
+        <div>
+          <h2 class="text-3xl font-bold tracking-tight text-navy sm:text-4xl">Compare at a glance</h2>
+          <p class="mt-4 max-w-2xl text-lg leading-relaxed text-slate-600">See how CFO, Eden, and Ledger differ in core job, inputs, and <%= SITE.steward.name %>—plus how CFO contrasts with typical “all-in-one” fintech experiences.</p>
+          <ul class="mt-8 space-y-3 text-sm text-slate-600">
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-faithGold"></span><span><strong class="text-navy">CFO</strong> — money, plans, projections; not research or identity.</span></li>
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-faithGold"></span><span><strong class="text-navy">Eden</strong> — sources, claims, citations; not a finance dashboard.</span></li>
+            <li class="flex gap-3"><span class="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-faithGold"></span><span><strong class="text-navy">Ledger</strong> — vault + deterministic documents; no invented field values.</span></li>
+          </ul>
+        </div>
+        <a href="compare.html" class="inline-flex min-h-[3rem] shrink-0 items-center justify-center self-start rounded-full border border-slate-300 bg-white px-8 text-base font-semibold text-navy shadow-md transition duration-300 hover:-translate-y-0.5 hover:border-faithGold hover:text-faithGold hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold lg:self-end active:scale-[0.99]">Open comparison</a>
       </div>
-      <a href="compare.html" class="inline-flex rounded-lg border border-slate-300 bg-white px-5 py-2.5 text-sm font-semibold text-navy shadow-sm transition hover:border-faithGold hover:text-faithGold focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold">Open comparison</a>
     </div>
   </section>
 

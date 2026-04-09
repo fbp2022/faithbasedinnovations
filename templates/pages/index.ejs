@@ -3,53 +3,83 @@
 <%- include('../partials/tw-header') -%>
 <main class="flex-1">
   <section class="relative overflow-hidden bg-navy text-white">
-    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_85%_0%,rgba(217,119,6,0.22),transparent_50%)]"></div>
-    <div class="relative mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 sm:py-20 lg:grid-cols-2 lg:items-center lg:gap-16 lg:px-8">
-      <div>
-        <span class="inline-flex items-center gap-2 rounded-full border border-amber-400/25 bg-amber-400/10 px-3 py-1 text-xs font-semibold uppercase tracking-widest text-amber-200">
-          <svg class="h-3.5 w-3.5 text-amber-300" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path stroke-linecap="round" d="M12 4v16M7 12h10"/></svg>
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_120%_80%_at_70%_-20%,rgba(217,119,6,0.18),transparent_55%)]"></div>
+    <div class="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_20%_100%,rgba(15,23,42,0.9),transparent_45%)]"></div>
+    <div class="relative mx-auto grid max-w-7xl gap-16 px-4 py-24 sm:px-6 sm:py-28 lg:grid-cols-2 lg:items-center lg:gap-20 lg:px-8 lg:py-32">
+      <div class="max-w-2xl">
+        <span class="inline-flex items-center rounded-full border border-amber-400/30 bg-amber-400/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.2em] text-amber-200/95">
           Premium desktop software
         </span>
-        <h1 class="mt-6 text-4xl font-extrabold leading-[1.1] tracking-tight sm:text-5xl lg:text-[3.25rem]">Purpose-built tools for faithful, disciplined work.</h1>
-        <p class="mt-6 max-w-xl text-lg leading-relaxed text-slate-200">We build <strong class="font-semibold text-white">CFO</strong>, <strong class="font-semibold text-white">Eden</strong>, and <strong class="font-semibold text-white">Ledger</strong>—three distinct products united by local-first engineering, privacy-by-design, and <%= SITE.steward.name %>, our rules-based intelligence layer.</p>
-        <div class="mt-8 flex flex-wrap gap-3">
-          <a href="products.html" class="inline-flex items-center justify-center rounded-lg bg-faithGold px-5 py-3 text-sm font-semibold text-white shadow-lg shadow-amber-900/20 transition hover:bg-amber-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-navy">Explore products</a>
-          <a href="compare.html" class="inline-flex items-center justify-center rounded-lg border border-white/20 bg-white/5 px-5 py-3 text-sm font-semibold text-white backdrop-blur transition hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 focus-visible:ring-offset-2 focus-visible:ring-offset-navy">Compare products</a>
+        <h1 class="mt-8 text-5xl font-bold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">Purpose-built tools for faithful, disciplined work.</h1>
+        <p class="mt-8 max-w-xl text-xl leading-relaxed text-slate-200/95 sm:text-[1.35rem]">We build <strong class="font-semibold text-white">CFO</strong>, <strong class="font-semibold text-white">Eden</strong>, and <strong class="font-semibold text-white">Ledger</strong>—three distinct products united by local-first engineering, privacy-by-design, and <%= SITE.steward.name %>, our rules-based intelligence layer.</p>
+        <div class="mt-12 flex flex-wrap gap-4">
+          <a href="products.html" class="inline-flex min-h-[3.25rem] items-center justify-center rounded-full bg-faithGold px-8 text-base font-semibold text-white shadow-xl shadow-amber-950/25 transition duration-300 hover:-translate-y-0.5 hover:bg-amber-600 hover:shadow-2xl focus:outline-none focus-visible:ring-2 focus-visible:ring-amber-300 focus-visible:ring-offset-2 focus-visible:ring-offset-navy active:translate-y-0 active:scale-[0.99]">Explore products</a>
+          <a href="compare.html" class="inline-flex min-h-[3.25rem] items-center justify-center rounded-full border border-white/25 bg-white/5 px-8 text-base font-semibold text-white backdrop-blur-sm transition duration-300 hover:-translate-y-0.5 hover:border-white/40 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-navy active:scale-[0.99]">Compare products</a>
         </div>
       </div>
-      <div class="rounded-2xl border border-slate-600/80 bg-navySoft/90 p-6 shadow-2xl ring-1 ring-white/5 backdrop-blur sm:p-8">
-        <div class="flex items-center justify-between gap-4 border-b border-slate-600/60 pb-4">
-          <h2 class="text-xs font-bold uppercase tracking-[0.25em] text-amber-200"><%= SITE.steward.name %></h2>
+      <div class="rounded-3xl border border-slate-500/40 bg-navySoft/90 p-8 shadow-2xl shadow-black/40 ring-1 ring-white/10 backdrop-blur-md sm:p-10">
+        <div class="flex items-center justify-between gap-4 border-b border-slate-600/50 pb-5">
+          <h2 class="text-xs font-bold uppercase tracking-[0.28em] text-amber-200"><%= SITE.steward.name %></h2>
           <span class="shrink-0 rounded-full border border-slate-500/80 px-3 py-1 text-xs font-medium text-slate-300"><%= SITE.availability.badge %></span>
         </div>
-        <p class="mt-5 text-sm leading-relaxed text-slate-200"><%= SITE.steward.short %></p>
-        <div class="mt-8 grid grid-cols-3 gap-3 text-center">
-          <div class="rounded-xl border border-slate-600/50 bg-slate-900/40 py-4 text-xs font-bold tracking-wide text-slate-200">CFO</div>
-          <div class="rounded-xl border border-slate-600/50 bg-slate-900/40 py-4 text-xs font-bold tracking-wide text-slate-200">Eden</div>
-          <div class="rounded-xl border border-slate-600/50 bg-slate-900/40 py-4 text-xs font-bold tracking-wide text-slate-200">Ledger</div>
-        </div>
+        <p class="mt-6 text-base leading-relaxed text-slate-200"><%= SITE.steward.short %></p>
+        <p class="mt-10 text-xs font-semibold uppercase tracking-[0.2em] text-slate-500">Product line</p>
+        <p class="mt-2 text-lg font-medium tracking-wide text-slate-100">CFO <span class="text-slate-500">·</span> Eden <span class="text-slate-500">·</span> Ledger</p>
       </div>
     </div>
   </section>
 
-  <section class="mx-auto max-w-7xl px-4 py-16 sm:px-6 lg:px-8">
-    <div class="mb-12 max-w-2xl">
-      <h2 class="text-3xl font-bold tracking-tight text-navy sm:text-4xl">Our products</h2>
-      <p class="mt-3 text-slate-600">Each title is engineered as standalone software—same standard of craft, clearly separated missions.</p>
+  <section class="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+    <div class="mb-16 max-w-3xl">
+      <h2 class="text-4xl font-bold tracking-tight text-navy sm:text-5xl">Our products</h2>
+      <p class="mt-5 text-lg leading-relaxed text-slate-600">Each title is engineered as standalone software—same standard of craft, clearly separated missions.</p>
     </div>
-    <div class="grid gap-8 md:grid-cols-3">
+    <div class="grid gap-10 md:grid-cols-3">
       <% var st = SITE.steward.name; var blurbs = { cfo: "A local-first financial operating system for budgeting, planning, forecasting, and cash-flow clarity—guided by deterministic " + st + " logic.", eden: "A standalone research system that ingests media and documents, structures claims and citations, and prioritizes facts with source evaluation.", ledger: "An encrypted vault and deterministic document workflow for up to two people—with " + st + " assisting field mapping, never inventing data." }; -%>
       <% NAV_PRODUCTS.forEach(function (p) { %>
-      <article class="group flex flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm ring-1 ring-slate-900/5 transition hover:-translate-y-0.5 hover:shadow-lg">
-        <div class="mb-4 flex flex-wrap items-center justify-between gap-2">
+      <article class="group flex flex-col rounded-3xl border border-slate-200/90 bg-white p-8 shadow-lg shadow-slate-900/[0.06] ring-1 ring-slate-900/[0.04] transition duration-300 hover:-translate-y-1 hover:shadow-xl hover:shadow-slate-900/10">
+        <div class="mb-6 flex flex-wrap items-center justify-between gap-2">
           <span class="text-xs font-bold uppercase tracking-wider text-faithGold"><%= PRODUCTS[p.id].tag %></span>
           <span class="rounded-full bg-amber-50 px-2.5 py-0.5 text-xs font-semibold text-amber-800 ring-1 ring-amber-100"><%= SITE.availability.badge %></span>
         </div>
-        <h3 class="text-xl font-bold text-navy"><%= p.label %></h3>
-        <p class="mt-3 flex-1 text-sm leading-relaxed text-slate-600"><%= blurbs[p.id] %></p>
-        <a href="<%= p.href %>" class="mt-6 inline-flex text-sm font-semibold text-navy underline-offset-4 transition hover:text-faithGold hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold focus-visible:ring-offset-2 rounded-sm">Learn more</a>
+        <h3 class="mt-12 text-xl font-bold text-navy"><%= p.label %></h3>
+        <p class="mt-4 flex-1 text-sm leading-relaxed text-slate-600"><%= blurbs[p.id] %></p>
+        <a href="<%= p.href %>" class="mt-8 inline-flex text-sm font-semibold text-navy underline-offset-4 transition duration-200 hover:text-faithGold hover:underline focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold focus-visible:ring-offset-2 rounded-sm">Learn more</a>
       </article>
       <% }); %>
+    </div>
+  </section>
+
+  <section class="border-y border-slate-200/80 bg-white">
+    <div class="mx-auto max-w-7xl px-4 py-20 sm:px-6 sm:py-28 lg:px-8">
+      <div class="max-w-3xl">
+        <h2 class="text-4xl font-bold tracking-tight text-navy sm:text-5xl">Compare at a glance</h2>
+        <p class="mt-6 text-lg leading-relaxed text-slate-600">Three missions, one bar for quality. Use this view to see how scope differs—then open the full comparison for detail.</p>
+      </div>
+      <div class="mt-14 grid gap-8 lg:grid-cols-3">
+        <div class="rounded-2xl border border-slate-200 bg-slate-50/80 p-8 shadow-sm ring-1 ring-slate-900/[0.03] transition duration-300 hover:shadow-md">
+          <p class="text-xs font-bold uppercase tracking-wider text-faithGold">CFO</p>
+          <p class="mt-3 text-sm font-semibold text-navy">Financial operating system</p>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Money in motion: planning, forecasting, cash flow, and <%= SITE.steward.name %>-guided interpretation from structured data—not a feed or a toy.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50/80 p-8 shadow-sm ring-1 ring-slate-900/[0.03] transition duration-300 hover:shadow-md">
+          <p class="text-xs font-bold uppercase tracking-wider text-faithGold">Eden</p>
+          <p class="mt-3 text-sm font-semibold text-navy">Research intelligence</p>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Ingestion, analysis, prioritization, and citations—<%= SITE.steward.name %> ranks what matters to your question, without blending into finance or identity.</p>
+        </div>
+        <div class="rounded-2xl border border-slate-200 bg-slate-50/80 p-8 shadow-sm ring-1 ring-slate-900/[0.03] transition duration-300 hover:shadow-md">
+          <p class="text-xs font-bold uppercase tracking-wider text-faithGold">Ledger</p>
+          <p class="mt-3 text-sm font-semibold text-navy">Vault &amp; documents</p>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600">Encrypted identity storage and deterministic fills—<%= SITE.steward.name %> maps fields; it never invents values you did not provide.</p>
+        </div>
+      </div>
+      <div class="mt-12 rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-8 shadow-inner ring-1 ring-slate-900/[0.04] sm:p-10">
+        <p class="text-sm font-bold uppercase tracking-[0.14em] text-slate-500">CFO vs. typical fintech apps</p>
+        <p class="mt-4 text-base leading-relaxed text-slate-700">Most consumer apps optimize for engagement, cross-sell, and cloud-first sync. <strong class="font-semibold text-navy">CFO</strong> is built as deliberate desktop software: local-first, rules-based intelligence, and clarity over infinite feeds—because serious money work deserves a serious surface, not a marketing dashboard.</p>
+      </div>
+      <div class="mt-12">
+        <a href="compare.html" class="inline-flex min-h-[3rem] items-center justify-center rounded-full border border-slate-300 bg-white px-8 text-base font-semibold text-navy shadow-md transition duration-300 hover:-translate-y-0.5 hover:border-faithGold hover:text-faithGold hover:shadow-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-faithGold active:scale-[0.99]">Open full comparison</a>
+      </div>
     </div>
   </section>
 

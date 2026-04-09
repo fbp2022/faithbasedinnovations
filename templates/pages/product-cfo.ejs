@@ -17,74 +17,44 @@
     </div>
   </section>
 
-  <section class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
-    <div class="overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-xl shadow-slate-900/10">
-      <div class="flex items-center gap-1 border-b border-slate-700/70 bg-slate-900 px-4 py-2.5">
-        <span class="h-2.5 w-2.5 rounded-full bg-rose-400/70"></span>
-        <span class="h-2.5 w-2.5 rounded-full bg-amber-300/70"></span>
-        <span class="h-2.5 w-2.5 rounded-full bg-emerald-400/70"></span>
-        <span class="ml-3 text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">CFO dashboard</span>
-      </div>
-      <div class="grid grid-cols-5 gap-3 p-4">
-        <div class="col-span-3 space-y-3">
-          <div class="h-7 rounded-lg bg-slate-800"></div>
-          <div class="grid grid-cols-2 gap-3">
-            <div class="h-20 rounded-lg bg-slate-800/80"></div>
-            <div class="h-20 rounded-lg bg-slate-800/70"></div>
-          </div>
-          <div class="h-24 rounded-lg bg-slate-800/70"></div>
-        </div>
-        <div class="col-span-2 space-y-3">
-          <div class="h-11 rounded-lg border border-faithGold/40 bg-faithGold/15"></div>
-          <div class="h-11 rounded-lg bg-slate-700/80"></div>
-          <div class="h-11 rounded-lg bg-slate-700/70"></div>
-          <div class="h-11 rounded-lg bg-slate-700/60"></div>
-        </div>
-      </div>
-    </div>
-    <div>
-      <h2 class="text-2xl font-bold text-navy">A financial operating system—not a dashboard toy</h2>
-      <p class="mt-4 text-slate-600 leading-relaxed">CFO is built for money in motion: structure, planning, and decisions grounded in your data. It is not a generic tracker or a thin budgeting app—it interprets, analyzes, and guides using rules and real inputs.</p>
-      <p class="mt-4 text-slate-600 leading-relaxed"><strong class="text-navy"><%= SITE.steward.name %></strong> inside CFO interprets financial data, surfaces patterns and risks, and calculates projections and runway. Guidance is deterministic: tied to what you record, not invented.</p>
-    </div>
+  <section class="mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-8">
+    <h2 class="text-2xl font-bold text-navy">A financial operating system—not a dashboard toy</h2>
+    <p class="mt-4 text-slate-600 leading-relaxed">CFO is built for money in motion: structure, planning, and decisions grounded in your data. It is not a generic tracker or a thin budgeting app—it interprets, analyzes, and guides using rules and real inputs. That work is organized into a structured system, not only surfaced as disconnected categories, so you get coherent visibility and system-level control instead of surface-level tracking alone.</p>
+    <p class="mt-4 text-slate-600 leading-relaxed"><strong class="text-navy"><%= SITE.steward.name %></strong> inside CFO interprets financial data, surfaces patterns and risks, and calculates projections and runway. Guidance is deterministic: tied to what you record, not invented.</p>
   </section>
 
-  <section class="border-y border-slate-200 bg-white py-16">
+  <section id="cfo-features" class="scroll-mt-28 border-y border-slate-200 bg-white py-16">
     <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
       <h2 class="text-center text-2xl font-bold text-navy">What CFO handles</h2>
       <ul class="mt-8 space-y-3 text-slate-600">
         <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-faithGold"></span>Budgeting and financial planning</li>
         <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-faithGold"></span>Forecasting and cash-flow clarity</li>
+        <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-faithGold"></span>Calendar-based financial awareness for upcoming and recurring obligations</li>
+        <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-faithGold"></span>Predictive scheduling of expenses from patterns or user-defined entries</li>
+        <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-faithGold"></span>Manual financial calendar control when you want full input authority</li>
+        <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-faithGold"></span>Structured financial database foundation—accounts, transactions, documents, and relationships kept in one coherent model</li>
         <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-faithGold"></span>OCR ingestion for statements and documents</li>
         <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-faithGold"></span>Optional Plaid integration—explicit and optional, never a silent default</li>
         <li class="flex gap-3"><span class="mt-1.5 h-1.5 w-1.5 shrink-0 rounded-full bg-faithGold"></span>Structured financial intelligence and advanced organization</li>
       </ul>
+      <p class="mt-8 text-slate-600 leading-relaxed">CFO includes a financial calendar that tracks recurring and upcoming expenses, can reflect patterns from your activity, and supports fully manual entry when you prefer direct control. It is there to give forward visibility into obligations—not as a separate gimmick, but as part of how the system keeps time and money aligned.</p>
       <p class="mt-8 text-center text-sm text-slate-500">Local-first and privacy-first. Your financial data stays oriented to your machine and your choices.</p>
     </div>
   </section>
 
-  <section class="mx-auto grid max-w-7xl gap-12 px-4 py-16 sm:px-6 lg:grid-cols-2 lg:items-center lg:px-8">
-    <div class="order-2 lg:order-1">
-      <h2 class="text-2xl font-bold text-navy"><%= SITE.steward.name %> without guesswork</h2>
-      <p class="mt-4 text-slate-600 leading-relaxed">Steward is a controlled, rules-based layer—not vague automation. In CFO, projections and signals trace back to sources and policy.</p>
-      <p class="mt-4 text-slate-600 leading-relaxed">No fabricated balances or filler numbers. Where information is missing, CFO does not pretend otherwise.</p>
-    </div>
-    <div class="order-1 overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-xl shadow-slate-900/10 lg:order-2">
-      <div class="flex items-center justify-between border-b border-slate-700/70 bg-slate-900 px-4 py-2.5">
-        <span class="text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">Forecast panel</span>
-        <span class="rounded bg-emerald-500/20 px-2 py-0.5 text-[10px] font-semibold text-emerald-300">deterministic</span>
-      </div>
-      <div class="space-y-3 p-4">
-        <div class="h-8 rounded-lg bg-slate-800"></div>
-        <div class="grid grid-cols-3 gap-3">
-          <div class="h-16 rounded-lg bg-slate-800/80"></div>
-          <div class="h-16 rounded-lg bg-slate-800/70"></div>
-          <div class="h-16 rounded-lg bg-slate-800/60"></div>
-        </div>
-        <div class="h-20 rounded-lg bg-slate-800/70"></div>
-      </div>
-    </div>
+  <%- include('../partials/cfo-database-foundation') %>
+
+  <section class="mx-auto max-w-3xl px-4 py-20 sm:px-6 lg:px-8">
+    <h2 class="text-2xl font-bold text-navy"><%= SITE.steward.name %> without guesswork</h2>
+    <p class="mt-4 text-slate-600 leading-relaxed">Steward is a controlled, rules-based layer—not vague automation. In CFO, projections and signals trace back to sources and policy.</p>
+    <p class="mt-4 text-slate-600 leading-relaxed">No fabricated balances or filler numbers. Where information is missing, CFO does not pretend otherwise.</p>
   </section>
+
+  <section class="mx-auto max-w-3xl px-4 pb-16 sm:px-6 sm:pb-20 lg:px-8" aria-label="Structured financial model">
+    <p class="text-slate-600 leading-relaxed">Under the interface, CFO relies on a structured internal financial model that ties accounts, transactions, recurring events, and documents together. It is part of the standard experience for every user, supports consistent tracking and planning, and is not presented as a developer-facing tool.</p>
+  </section>
+
+  <%- include('../partials/cfo-comparison-section') %>
 
   <section class="bg-navy py-14 text-white">
     <div class="mx-auto max-w-3xl px-4 text-center sm:px-6 lg:px-8">

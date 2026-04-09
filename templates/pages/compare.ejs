@@ -53,10 +53,17 @@
         </tbody>
       </table>
     </div>
-    <div class="mt-8 flex flex-wrap gap-3">
-      <a href="product-cfo.html" class="inline-flex rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-navy shadow-sm hover:border-faithGold hover:text-faithGold">CFO</a>
-      <a href="product-eden.html" class="inline-flex rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-navy shadow-sm hover:border-faithGold hover:text-faithGold">Eden</a>
-      <a href="product-ledger.html" class="inline-flex rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-navy shadow-sm hover:border-faithGold hover:text-faithGold">Ledger</a>
+
+    <section class="mt-16 rounded-3xl border border-slate-200 bg-gradient-to-br from-slate-50 to-white p-8 shadow-sm ring-1 ring-slate-900/[0.04] sm:p-10" aria-labelledby="compare-fintech-heading">
+      <h2 id="compare-fintech-heading" class="text-2xl font-bold tracking-tight text-navy">CFO and the “fintech default”</h2>
+      <p class="mt-4 text-base leading-relaxed text-slate-600">Many apps bundle bank feeds, credit scores, and cross-sell into one noisy surface—optimized for time-in-app, not clarity. <strong class="font-semibold text-navy">CFO</strong> is intentionally different: a local-first financial operating system with deterministic <%= SITE.steward.name %> logic, structured inputs, and boundaries—so finance stays finance, not a feed.</p>
+      <p class="mt-4 text-base leading-relaxed text-slate-600"><strong class="font-semibold text-navy">Eden</strong> and <strong class="font-semibold text-navy">Ledger</strong> answer different questions entirely (research and identity/documents). None of our titles are designed to blur those missions for engagement metrics.</p>
+    </section>
+
+    <div class="mt-12 flex flex-wrap gap-3">
+      <a href="product-cfo.html" class="inline-flex rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-navy shadow-sm transition duration-200 hover:border-faithGold hover:text-faithGold hover:shadow-md">CFO</a>
+      <a href="product-eden.html" class="inline-flex rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-navy shadow-sm transition duration-200 hover:border-faithGold hover:text-faithGold hover:shadow-md">Eden</a>
+      <a href="product-ledger.html" class="inline-flex rounded-lg border border-slate-300 bg-white px-4 py-2 text-sm font-semibold text-navy shadow-sm transition duration-200 hover:border-faithGold hover:text-faithGold hover:shadow-md">Ledger</a>
       <span class="inline-flex items-center rounded-lg border border-amber-200 bg-amber-50 px-4 py-2 text-sm font-semibold text-amber-900" role="status"><%= SITE.availability.ctaLabel %></span>
     </div>
   </section>
