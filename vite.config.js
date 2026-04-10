@@ -13,6 +13,8 @@ const pages = [
   "product-ledger.html",
   "compare.html",
   "support.html",
+  "simulator.html",
+  "reflections.html",
   "about.html",
   "security.html",
   "privacy.html",
