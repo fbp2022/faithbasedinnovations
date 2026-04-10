@@ -10,3 +10,37 @@
     });
   })();
 </script>
+<script>
+  (function () {
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+      document.documentElement.classList.add("fbi-reduced-motion");
+      return;
+    }
+    var main = document.querySelector("main");
+    if (!main) return;
+    var all = Array.prototype.slice.call(main.querySelectorAll(":scope > section"));
+    if (!all.length) all = Array.prototype.slice.call(main.children);
+    var nodes = all.length > 1 ? all.slice(1) : [];
+    var yAttr = ["sm", "md", "lg"];
+    nodes.forEach(function (el, i) {
+      el.classList.add("fbi-reveal");
+      el.setAttribute("data-fbi-y", yAttr[i % 3]);
+    });
+    var io = new IntersectionObserver(
+      function (entries) {
+        entries.forEach(function (ent) {
+          if (!ent.isIntersecting) return;
+          var t = ent.target;
+          requestAnimationFrame(function () {
+            t.classList.add("fbi-reveal--visible");
+          });
+          io.unobserve(t);
+        });
+      },
+      { rootMargin: "0px 0px -48px 0px", threshold: 0.04 }
+    );
+    nodes.forEach(function (el) {
+      io.observe(el);
+    });
+  })();
+</script>
